@@ -1,0 +1,38 @@
+name: katim-proto
+
+x-node: &node
+  build: .
+  image: katim-proto:latest
+  cap_add: [NET_ADMIN]
+  volumes:
+    - ./:/app
+    - ../katim-sim/traces/processed:/traces:ro
+    - ../katim-sim/policies:/katim/policies:ro
+
+services:
+  hq:
+    <<: *node
+    container_name: katim-hq
+    hostname: hq
+    networks:
+      bearer_a: {ipv4_address: 10.10.1.20}
+      bearer_b: {ipv4_address: 10.10.2.20}
+    command: ["sh", "/app/scripts/entry.sh", "hq"]
+
+  vehicle:
+    <<: *node
+    container_name: katim-vehicle
+    hostname: vehicle
+    depends_on: [hq]
+    networks:
+      bearer_a: {ipv4_address: 10.10.1.10}
+      bearer_b: {ipv4_address: 10.10.2.10}
+    command: ["sh", "/app/scripts/entry.sh", "vehicle"]
+
+networks:
+  bearer_a:
+    driver: bridge
+    ipam: {config: [{subnet: 10.10.1.0/24}]}
+  bearer_b:
+    driver: bridge
+    ipam: {config: [{subnet: 10.10.2.0/24}]}

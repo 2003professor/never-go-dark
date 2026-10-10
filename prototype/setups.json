@@ -1,0 +1,114 @@
+[
+ {
+  "id": "corkgeo",
+  "label": "Cork 5G drive \u00b7 GEO satellite backup (model)",
+  "reps": 5,
+  "trace": "/traces/ucc5g/Download__Driving__B_2020.02.27_20.35.57.csv",
+  "start": 280,
+  "window": [
+   280,
+   370
+  ],
+  "bearer_a": {
+   "dataset": "UCC 5G/4G drive-test (University College Cork)",
+   "trace": "Download__Driving__B_2020.02.27_20.35.57",
+   "window_s": [
+    280,
+    370
+   ],
+   "provenance": "REAL",
+   "class": "5G"
+  },
+  "bearer_b": {
+   "dataset": "GEO model (SPEC \u00a73.6: 600 ms RTT, 18/3 Mbit/s, 0.1 % loss)",
+   "provenance": "MODEL",
+   "class": "GEO"
+  },
+  "class_a": "5G",
+  "class_b": "GEO",
+  "timeline_a": null,
+  "timeline_b": null,
+  "why": "The film's run, repeated: how much of 0.44 s vs 3.90 s is run-to-run variance?"
+ },
+ {
+  "id": "corkleo",
+  "label": "Cork 5G drive \u00b7 Starlink LEO backup (measured)",
+  "reps": 5,
+  "trace": "/traces/ucc5g/Download__Driving__B_2020.02.27_20.35.57.csv",
+  "start": 280,
+  "window": [
+   280,
+   370
+  ],
+  "bearer_a": {
+   "dataset": "UCC 5G/4G drive-test (University College Cork)",
+   "trace": "Download__Driving__B_2020.02.27_20.35.57",
+   "window_s": [
+    280,
+    370
+   ],
+   "provenance": "REAL",
+   "class": "5G"
+  },
+  "bearer_b": {
+   "dataset": "Starlink on the road (measured; seconds concatenated, unmeasured gaps removed; RTT attached per SPEC \u00a713.8)",
+   "trace": "sotr_05",
+   "window_s": [
+    0,
+    90
+   ],
+   "provenance": "REAL (stitched to the Cork drive by time only)",
+   "class": "LEO"
+  },
+  "class_a": "5G",
+  "class_b": "LEO",
+  "timeline_a": null,
+  "timeline_b": "/app/timelines/corkleo_b.csv",
+  "why": "Replace the GEO model with a measured satellite link."
+ },
+ {
+  "id": "rail",
+  "label": "High-speed rail \u00b7 two carriers captured simultaneously",
+  "reps": 5,
+  "trace": null,
+  "start": 2.0,
+  "window": [
+   2.0,
+   92.0
+  ],
+  "bearer_a": {
+   "dataset": "HSR-MPTCP (high-speed rail, MPTCP subflows)",
+   "trace": "hsr_e1529470664_olia_U4_wlan16",
+   "window_s": [
+    2.0,
+    92.0
+   ],
+   "provenance": "REAL SIMULTANEOUS",
+   "class": "cellular-subflow"
+  },
+  "bearer_b": {
+   "dataset": "HSR-MPTCP, the other carrier on the same train at the same seconds",
+   "trace": "hsr_e1529470664_olia_M3_wlan3",
+   "window_s": [
+    2.0,
+    92.0
+   ],
+   "provenance": "REAL SIMULTANEOUS",
+   "class": "cellular-subflow"
+  },
+  "class_a": "cellular-subflow",
+  "class_b": "cellular-subflow",
+  "timeline_a": "/app/timelines/rail_a.csv",
+  "timeline_b": "/app/timelines/rail_b.csv",
+  "why": "A second real collapse, with both links measured at the same time (no stitching).",
+  "selection": {
+   "group": "hsr_e1529470664_olia",
+   "split": "train",
+   "degradation_event_trace_s": 42.0,
+   "rule": "max seconds where A starves (<0.15 Mbit/s or unusable) while B carries >= 0.5 Mbit/s, then healthy lead before the collapse",
+   "a_starving_s_covered_by_b": 20,
+   "healthy_lead_s": 15,
+   "a_starving_s": 51
+  }
+ }
+]

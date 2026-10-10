@@ -1,0 +1,83 @@
+{
+ "1|documented": {
+  "aoi_p95_s": 9.1559,
+  "aoi_mean_s": 3.3692,
+  "outage_per_transition_s": 5.2707,
+  "alert_hit_rate_feasible": 0.7327,
+  "voice_within_hard_feasible": 0.4228,
+  "video_goodput": 0.7414,
+  "emission_tx_s": 7.7494
+ },
+ "1|ours_P1+P2": {
+  "aoi_p95_s": 17.0931,
+  "aoi_mean_s": 5.3535,
+  "outage_per_transition_s": 0.5562,
+  "alert_hit_rate_feasible": 0.8685,
+  "voice_within_hard_feasible": 0.4414,
+  "video_goodput": 0.7909,
+  "emission_tx_s": 67.2675
+ },
+ "1|ours_P2_only": {
+  "aoi_p95_s": 4.8255,
+  "aoi_mean_s": 2.0215,
+  "outage_per_transition_s": 0.5535,
+  "alert_hit_rate_feasible": 0.777,
+  "voice_within_hard_feasible": 0.4399,
+  "video_goodput": 0.7907,
+  "emission_tx_s": 67.1262
+ },
+ "2|documented": {
+  "aoi_p95_s": 9.2008,
+  "aoi_mean_s": 3.3804,
+  "outage_per_transition_s": 5.2707,
+  "alert_hit_rate_feasible": 0.9097,
+  "voice_within_hard_feasible": 0.8941,
+  "video_goodput": 0.7413,
+  "emission_tx_s": 7.7494
+ },
+ "2|ours_P1+P2": {
+  "aoi_p95_s": 19.6968,
+  "aoi_mean_s": 6.2577,
+  "outage_per_transition_s": 0.556,
+  "alert_hit_rate_feasible": 0.9946,
+  "voice_within_hard_feasible": 0.9862,
+  "video_goodput": 0.7904,
+  "emission_tx_s": 67.3294
+ },
+ "2|ours_P2_only": {
+  "aoi_p95_s": 4.8855,
+  "aoi_mean_s": 2.0392,
+  "outage_per_transition_s": 0.5492,
+  "alert_hit_rate_feasible": 0.9946,
+  "voice_within_hard_feasible": 0.9863,
+  "video_goodput": 0.7902,
+  "emission_tx_s": 67.1825
+ },
+ "8|documented": {
+  "aoi_p95_s": 5.9272,
+  "aoi_mean_s": 1.7389,
+  "outage_per_transition_s": 5.2707,
+  "alert_hit_rate_feasible": 0.9094,
+  "voice_within_hard_feasible": 0.8941,
+  "video_goodput": 0.7409,
+  "emission_tx_s": 7.7494
+ },
+ "8|ours_P1+P2": {
+  "aoi_p95_s": 1.4531,
+  "aoi_mean_s": 0.6343,
+  "outage_per_transition_s": 0.5783,
+  "alert_hit_rate_feasible": 0.9942,
+  "voice_within_hard_feasible": 0.9857,
+  "video_goodput": 0.7889,
+  "emission_tx_s": 61.2047
+ },
+ "8|ours_P2_only": {
+  "aoi_p95_s": 1.4567,
+  "aoi_mean_s": 0.636,
+  "outage_per_transition_s": 0.5783,
+  "alert_hit_rate_feasible": 0.9942,
+  "voice_within_hard_feasible": 0.9857,
+  "video_goodput": 0.7889,
+  "emission_tx_s": 61.2259
+ }
+}

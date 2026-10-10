@@ -1,0 +1,284 @@
+{
+ "modem": {
+  "use_modem": true,
+  "n_ticks": 327173,
+  "pos_rate": 0.1431413961421022,
+  "n_fit": 287100,
+  "n_val": 40073,
+  "collect_seconds": 85.7,
+  "val_auc_gb": 0.8516189528639266,
+  "val_ap_gb": 0.5057893866086026,
+  "val_auc_logreg": 0.6441630711518972,
+  "val_ap_logreg": 0.24833690397845481,
+  "val_event": [
+   {
+    "threshold": 0.2,
+    "events": 132,
+    "caught": 132,
+    "missed": 0,
+    "median_lead_s": 5.0,
+    "false_alarm_tick_frac": 0.7809952038369304
+   },
+   {
+    "threshold": 0.35,
+    "events": 132,
+    "caught": 131,
+    "missed": 1,
+    "median_lead_s": 5.0,
+    "false_alarm_tick_frac": 0.4869904076738609
+   },
+   {
+    "threshold": 0.5,
+    "events": 132,
+    "caught": 128,
+    "missed": 4,
+    "median_lead_s": 5.0,
+    "false_alarm_tick_frac": 0.30221822541966425
+   },
+   {
+    "threshold": 0.65,
+    "events": 132,
+    "caught": 125,
+    "missed": 7,
+    "median_lead_s": 5.0,
+    "false_alarm_tick_frac": 0.1767086330935252
+   },
+   {
+    "threshold": 0.8,
+    "events": 132,
+    "caught": 31,
+    "missed": 101,
+    "median_lead_s": 3.3000000000000003,
+    "false_alarm_tick_frac": 0.009922062350119904
+   }
+  ],
+  "feature_importance": [
+   [
+    "tput",
+    0.2683
+   ],
+   [
+    "rtt_trend",
+    0.1917
+   ],
+   [
+    "sinr",
+    0.1348
+   ],
+   [
+    "loss",
+    0.0667
+   ],
+   [
+    "sig_drop_max20",
+    0.0492
+   ],
+   [
+    "cls_5g",
+    0.0473
+   ],
+   [
+    "mode_rank",
+    0.0462
+   ],
+   [
+    "rtt_ratio_min20",
+    0.0439
+   ],
+   [
+    "sig",
+    0.0329
+   ],
+   [
+    "tput_slope5",
+    0.0311
+   ],
+   [
+    "rtt_ms",
+    0.0258
+   ],
+   [
+    "sig_slope5",
+    0.0187
+   ],
+   [
+    "telemetry_age",
+    0.0182
+   ],
+   [
+    "cls_sub",
+    0.0099
+   ],
+   [
+    "head_age_max",
+    0.0097
+   ],
+   [
+    "mode_drop10",
+    0.0041
+   ],
+   [
+    "tput_ratio_max10",
+    0.0014
+   ],
+   [
+    "dpd",
+    0.0
+   ],
+   [
+    "backlog_kb",
+    0.0
+   ],
+   [
+    "cls_lte",
+    0.0
+   ],
+   [
+    "cls_wifi",
+    0.0
+   ]
+  ],
+  "compiled_max_abs_diff": 2.220446049250313e-16
+ },
+ "no_modem": {
+  "use_modem": false,
+  "n_ticks": 327173,
+  "pos_rate": 0.1431413961421022,
+  "n_fit": 287100,
+  "n_val": 40073,
+  "collect_seconds": 79.1,
+  "val_auc_gb": 0.8321183824577459,
+  "val_ap_gb": 0.4588852047906971,
+  "val_auc_logreg": 0.6399526795962307,
+  "val_ap_logreg": 0.24491898495671455,
+  "val_event": [
+   {
+    "threshold": 0.2,
+    "events": 132,
+    "caught": 132,
+    "missed": 0,
+    "median_lead_s": 5.0,
+    "false_alarm_tick_frac": 0.74568345323741
+   },
+   {
+    "threshold": 0.35,
+    "events": 132,
+    "caught": 128,
+    "missed": 4,
+    "median_lead_s": 5.0,
+    "false_alarm_tick_frac": 0.48474220623501196
+   },
+   {
+    "threshold": 0.5,
+    "events": 132,
+    "caught": 127,
+    "missed": 5,
+    "median_lead_s": 5.0,
+    "false_alarm_tick_frac": 0.31435851318944846
+   },
+   {
+    "threshold": 0.65,
+    "events": 132,
+    "caught": 120,
+    "missed": 12,
+    "median_lead_s": 4.9,
+    "false_alarm_tick_frac": 0.177068345323741
+   },
+   {
+    "threshold": 0.8,
+    "events": 132,
+    "caught": 19,
+    "missed": 113,
+    "median_lead_s": 3.4000000000000004,
+    "false_alarm_tick_frac": 0.012709832134292566
+   }
+  ],
+  "feature_importance": [
+   [
+    "tput",
+    0.2845
+   ],
+   [
+    "rtt_trend",
+    0.2224
+   ],
+   [
+    "cls_5g",
+    0.1614
+   ],
+   [
+    "loss",
+    0.099
+   ],
+   [
+    "rtt_ratio_min20",
+    0.0716
+   ],
+   [
+    "rtt_ms",
+    0.0628
+   ],
+   [
+    "tput_slope5",
+    0.0394
+   ],
+   [
+    "telemetry_age",
+    0.0234
+   ],
+   [
+    "cls_sub",
+    0.0151
+   ],
+   [
+    "head_age_max",
+    0.0102
+   ],
+   [
+    "tput_ratio_max10",
+    0.0088
+   ],
+   [
+    "backlog_kb",
+    0.0015
+   ],
+   [
+    "dpd",
+    0.0
+   ],
+   [
+    "sig",
+    0.0
+   ],
+   [
+    "sig_drop_max20",
+    0.0
+   ],
+   [
+    "sig_slope5",
+    0.0
+   ],
+   [
+    "sinr",
+    0.0
+   ],
+   [
+    "mode_rank",
+    0.0
+   ],
+   [
+    "mode_drop10",
+    0.0
+   ],
+   [
+    "cls_lte",
+    0.0
+   ],
+   [
+    "cls_wifi",
+    0.0
+   ]
+  ],
+  "compiled_max_abs_diff": 2.220446049250313e-16
+ }
+}

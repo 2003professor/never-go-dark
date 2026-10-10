@@ -1,0 +1,1324 @@
+{
+ "method": {
+  "spread": "Per scenario x mechanism: IQR (25/50/75 pct) over the n_inst x 20 held-out runs, and a percentile bootstrap (B=10000, seed=12345) 95% CI of the run mean. The run mean equals the frozen per-scenario value.",
+  "paired": "NGD vs ATSSS per scenario: diff = NGD - ATSSS on the SAME (instance, seed) run (lower outage/emission is better, so a negative mean favours NGD). Percentile bootstrap (B=10000, seed=12345) 95% CI of the paired mean difference; the gap is significant iff that CI excludes 0.",
+  "bootstrap_B": 10000,
+  "bootstrap_seed": 12345
+ },
+ "per_scenario": {
+  "S1_lte5g_walk": {
+   "documented": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 2.158300054112554,
+     "median": 1.8583333333333334,
+     "iqr_lo": 1.06875,
+     "iqr_hi": 2.515,
+     "boot_ci_mean_lo": 1.8329678402326837,
+     "boot_ci_mean_hi": 2.5188879870129868
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 0.0,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.0,
+     "boot_ci_mean_hi": 0.0
+    }
+   },
+   "mobike": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 1.8487203733766235,
+     "median": 1.6,
+     "iqr_lo": 1.0458333333333334,
+     "iqr_hi": 2.1666666666666665,
+     "boot_ci_mean_lo": 1.5756870298971863,
+     "boot_ci_mean_hi": 2.164735568858225
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 0.0,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.0,
+     "boot_ci_mean_hi": 0.0
+    }
+   },
+   "atsss": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 2.158300054112554,
+     "median": 1.8583333333333334,
+     "iqr_lo": 1.06875,
+     "iqr_hi": 2.515,
+     "boot_ci_mean_lo": 1.8329678402326837,
+     "boot_ci_mean_hi": 2.5188879870129868
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 0.0,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.0,
+     "boot_ci_mean_hi": 0.0
+    }
+   },
+   "always_warm": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 2.158300054112554,
+     "median": 1.8583333333333334,
+     "iqr_lo": 1.06875,
+     "iqr_hi": 2.515,
+     "boot_ci_mean_lo": 1.8329678402326837,
+     "boot_ci_mean_hi": 2.5188879870129868
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 0.0,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.0,
+     "boot_ci_mean_hi": 0.0
+    }
+   },
+   "oracle": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 2.158300054112554,
+     "median": 1.8583333333333334,
+     "iqr_lo": 1.06875,
+     "iqr_hi": 2.515,
+     "boot_ci_mean_lo": 1.8329678402326837,
+     "boot_ci_mean_hi": 2.5188879870129868
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 0.0,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.0,
+     "boot_ci_mean_hi": 0.0
+    }
+   },
+   "never_go_dark": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 2.158300054112554,
+     "median": 1.8583333333333334,
+     "iqr_lo": 1.06875,
+     "iqr_hi": 2.515,
+     "boot_ci_mean_lo": 1.8329678402326837,
+     "boot_ci_mean_hi": 2.5188879870129868
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 0.0,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.0,
+     "boot_ci_mean_hi": 0.0
+    }
+   },
+   "never_go_dark_modem": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 2.158300054112554,
+     "median": 1.8583333333333334,
+     "iqr_lo": 1.06875,
+     "iqr_hi": 2.515,
+     "boot_ci_mean_lo": 1.8329678402326837,
+     "boot_ci_mean_hi": 2.5188879870129868
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 0.0,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.0,
+     "boot_ci_mean_hi": 0.0
+    }
+   }
+  },
+  "S2_5g_leo_drive": {
+   "documented": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 3.2181678495116004,
+     "median": 2.95,
+     "iqr_lo": 1.8625000000000003,
+     "iqr_hi": 4.1725,
+     "boot_ci_mean_lo": 2.821857843978938,
+     "boot_ci_mean_hi": 3.646276182844933
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 8.946250000000001,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 3.7836562500000004,
+     "boot_ci_mean_hi": 15.056562499999997
+    }
+   },
+   "mobike": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.71304901001776,
+     "median": 0.47500000000000003,
+     "iqr_lo": 0.3166666666666667,
+     "iqr_hi": 0.753125,
+     "boot_ci_mean_lo": 0.5710119013798701,
+     "boot_ci_mean_hi": 0.8657770019910644
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 85.99875,
+     "median": 90.95000000000002,
+     "iqr_lo": 68.95,
+     "iqr_hi": 107.35000000000001,
+     "boot_ci_mean_lo": 78.8684375,
+     "boot_ci_mean_hi": 92.8975625
+    }
+   },
+   "atsss": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.3529673971861472,
+     "median": 0.06000000000000001,
+     "iqr_lo": 0.042857142857142864,
+     "iqr_hi": 0.10000000000000002,
+     "boot_ci_mean_lo": 0.20769774080086584,
+     "boot_ci_mean_hi": 0.5180477374188313
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 122.94750000000002,
+     "median": 125.65,
+     "iqr_lo": 108.35000000000001,
+     "iqr_hi": 138.75,
+     "boot_ci_mean_lo": 119.43875,
+     "boot_ci_mean_hi": 126.55756250000003
+    }
+   },
+   "always_warm": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.35312364718614725,
+     "median": 0.06000000000000001,
+     "iqr_lo": 0.04821428571428572,
+     "iqr_hi": 0.10000000000000002,
+     "boot_ci_mean_lo": 0.20834565408549788,
+     "boot_ci_mean_hi": 0.5183990361201299
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 122.94750000000002,
+     "median": 125.65,
+     "iqr_lo": 108.35000000000001,
+     "iqr_hi": 138.75,
+     "boot_ci_mean_lo": 119.43875,
+     "boot_ci_mean_hi": 126.55756250000003
+    }
+   },
+   "oracle": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.07022916666666666,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.02275587797619048,
+     "boot_ci_mean_hi": 0.1477037946428571
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 50.191250000000004,
+     "median": 15.350000000000001,
+     "iqr_lo": 9.4,
+     "iqr_hi": 99.625,
+     "boot_ci_mean_lo": 39.39440625,
+     "boot_ci_mean_hi": 61.55256249999999
+    }
+   },
+   "never_go_dark": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.4180425477300478,
+     "median": 0.2366666666666667,
+     "iqr_lo": 0.1592857142857143,
+     "iqr_hi": 0.4411111111111111,
+     "boot_ci_mean_lo": 0.3145471793831169,
+     "boot_ci_mean_hi": 0.5357842419733047
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 95.10499999999999,
+     "median": 93.95000000000002,
+     "iqr_lo": 80.97500000000001,
+     "iqr_hi": 109.125,
+     "boot_ci_mean_lo": 91.066125,
+     "boot_ci_mean_hi": 99.27006250000001
+    }
+   },
+   "never_go_dark_modem": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.36576738539238546,
+     "median": 0.22666666666666668,
+     "iqr_lo": 0.1592857142857143,
+     "iqr_hi": 0.3760714285714286,
+     "boot_ci_mean_lo": 0.2825391121031746,
+     "boot_ci_mean_hi": 0.4679529581529582
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 96.14750000000001,
+     "median": 94.95,
+     "iqr_lo": 82.025,
+     "iqr_hi": 109.85000000000001,
+     "boot_ci_mean_lo": 92.3286875,
+     "boot_ci_mean_hi": 100.13128125
+    }
+   }
+  },
+  "S3_5g_geo_drive": {
+   "documented": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 2.9679945436507937,
+     "median": 2.375,
+     "iqr_lo": 1.7750000000000001,
+     "iqr_hi": 3.8725,
+     "boot_ci_mean_lo": 2.5946964905753975,
+     "boot_ci_mean_hi": 3.366994642857143
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 10.8375,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 4.5199375,
+     "boot_ci_mean_hi": 18.290156249999995
+    }
+   },
+   "mobike": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.9429702380952382,
+     "median": 0.47500000000000003,
+     "iqr_lo": 0.3166666666666667,
+     "iqr_hi": 0.9616666666666669,
+     "boot_ci_mean_lo": 0.6432717137896826,
+     "boot_ci_mean_hi": 1.317438330853175
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 80.5425,
+     "median": 86.55000000000001,
+     "iqr_lo": 59.125,
+     "iqr_hi": 108.30000000000001,
+     "boot_ci_mean_lo": 72.32225000000003,
+     "boot_ci_mean_hi": 88.61625000000001
+    }
+   },
+   "atsss": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.5206860119047619,
+     "median": 0.07500000000000001,
+     "iqr_lo": 0.048214285714285716,
+     "iqr_hi": 0.15000000000000002,
+     "boot_ci_mean_lo": 0.19502834821428575,
+     "boot_ci_mean_hi": 0.9529603050595238
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 115.22874999999999,
+     "median": 119.65,
+     "iqr_lo": 105.45000000000002,
+     "iqr_hi": 136.875,
+     "boot_ci_mean_lo": 108.36718750000001,
+     "boot_ci_mean_hi": 121.29753124999999
+    }
+   },
+   "always_warm": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.5241408730158731,
+     "median": 0.07500000000000001,
+     "iqr_lo": 0.05000000000000001,
+     "iqr_hi": 0.15000000000000002,
+     "boot_ci_mean_lo": 0.19904100942460318,
+     "boot_ci_mean_hi": 0.9551263516865077
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 115.22874999999999,
+     "median": 119.65,
+     "iqr_lo": 105.45000000000002,
+     "iqr_hi": 136.875,
+     "boot_ci_mean_lo": 108.36718750000001,
+     "boot_ci_mean_hi": 121.29753124999999
+    }
+   },
+   "oracle": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.39234573412698415,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.04241071428571429,
+     "boot_ci_mean_lo": 0.12975889136904764,
+     "boot_ci_mean_hi": 0.7274909598214286
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 57.553750000000015,
+     "median": 26.5,
+     "iqr_lo": 13.475000000000001,
+     "iqr_hi": 110.4,
+     "boot_ci_mean_lo": 46.70734375,
+     "boot_ci_mean_hi": 68.862625
+    }
+   },
+   "never_go_dark": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.6706235119047619,
+     "median": 0.25,
+     "iqr_lo": 0.1575,
+     "iqr_hi": 0.5041666666666667,
+     "boot_ci_mean_lo": 0.38619343998015876,
+     "boot_ci_mean_hi": 1.0411915426587304
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 92.87500000000001,
+     "median": 96.15,
+     "iqr_lo": 80.7,
+     "iqr_hi": 108.5,
+     "boot_ci_mean_lo": 86.76990625,
+     "boot_ci_mean_hi": 98.61640625000001
+    }
+   },
+   "never_go_dark_modem": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.6565183531746033,
+     "median": 0.22916666666666669,
+     "iqr_lo": 0.15000000000000002,
+     "iqr_hi": 0.503125,
+     "boot_ci_mean_lo": 0.36960961061507935,
+     "boot_ci_mean_hi": 1.0288725694444445
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 97.75125,
+     "median": 104.45000000000002,
+     "iqr_lo": 84.75,
+     "iqr_hi": 116.2,
+     "boot_ci_mean_lo": 91.47221875000001,
+     "boot_ci_mean_hi": 103.60999999999999
+    }
+   }
+  },
+  "S4_wifi_edge": {
+   "documented": {
+    "outage_per_transition_s": {
+     "n": 40,
+     "mean": 2.3364583333333337,
+     "median": 0.1,
+     "iqr_lo": 0.0,
+     "iqr_hi": 1.66,
+     "boot_ci_mean_lo": 0.7231145833333334,
+     "boot_ci_mean_hi": 4.646715625000001
+    },
+    "emission_tx_s": {
+     "n": 40,
+     "mean": 17.612500000000004,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 34.975,
+     "boot_ci_mean_lo": 10.0849375,
+     "boot_ci_mean_hi": 26.107625000000002
+    }
+   },
+   "mobike": {
+    "outage_per_transition_s": {
+     "n": 40,
+     "mean": 1.5779166666666666,
+     "median": 0.1,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.75625,
+     "boot_ci_mean_lo": 0.3681239583333334,
+     "boot_ci_mean_hi": 3.303511458333333
+    },
+    "emission_tx_s": {
+     "n": 40,
+     "mean": 19.525,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 40.075,
+     "boot_ci_mean_lo": 11.454875000000001,
+     "boot_ci_mean_hi": 28.480250000000005
+    }
+   },
+   "atsss": {
+    "outage_per_transition_s": {
+     "n": 40,
+     "mean": 1.7473750000000003,
+     "median": 0.037500000000000006,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.16250000000000003,
+     "boot_ci_mean_lo": 0.20870833333333336,
+     "boot_ci_mean_hi": 4.0877437500000005
+    },
+    "emission_tx_s": {
+     "n": 40,
+     "mean": 118.05,
+     "median": 113.0,
+     "iqr_lo": 101.825,
+     "iqr_hi": 134.47500000000002,
+     "boot_ci_mean_lo": 112.7125,
+     "boot_ci_mean_hi": 123.6600625
+    }
+   },
+   "always_warm": {
+    "outage_per_transition_s": {
+     "n": 40,
+     "mean": 1.746125,
+     "median": 0.025,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.16250000000000003,
+     "boot_ci_mean_lo": 0.2081114583333334,
+     "boot_ci_mean_hi": 4.087586458333333
+    },
+    "emission_tx_s": {
+     "n": 40,
+     "mean": 118.05,
+     "median": 113.0,
+     "iqr_lo": 101.825,
+     "iqr_hi": 134.47500000000002,
+     "boot_ci_mean_lo": 112.7125,
+     "boot_ci_mean_hi": 123.6600625
+    }
+   },
+   "oracle": {
+    "outage_per_transition_s": {
+     "n": 40,
+     "mean": 1.1280416666666666,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.05,
+     "boot_ci_mean_lo": 0.03175000000000001,
+     "boot_ci_mean_hi": 3.048676041666667
+    },
+    "emission_tx_s": {
+     "n": 40,
+     "mean": 32.9375,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 79.1,
+     "boot_ci_mean_lo": 18.911562500000002,
+     "boot_ci_mean_hi": 48.217625
+    }
+   },
+   "never_go_dark": {
+    "outage_per_transition_s": {
+     "n": 40,
+     "mean": 1.2428333333333332,
+     "median": 0.025,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.13125,
+     "boot_ci_mean_lo": 0.06879166666666667,
+     "boot_ci_mean_hi": 3.3057979166666667
+    },
+    "emission_tx_s": {
+     "n": 40,
+     "mean": 21.215,
+     "median": 19.6,
+     "iqr_lo": 0.0,
+     "iqr_hi": 31.425,
+     "boot_ci_mean_lo": 15.884812500000002,
+     "boot_ci_mean_hi": 26.640187499999996
+    }
+   },
+   "never_go_dark_modem": {
+    "outage_per_transition_s": {
+     "n": 40,
+     "mean": 1.2445833333333334,
+     "median": 0.025,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.15416666666666667,
+     "boot_ci_mean_lo": 0.07054062500000001,
+     "boot_ci_mean_hi": 3.307544791666667
+    },
+    "emission_tx_s": {
+     "n": 40,
+     "mean": 19.145,
+     "median": 19.6,
+     "iqr_lo": 0.0,
+     "iqr_hi": 29.775000000000002,
+     "boot_ci_mean_lo": 14.365,
+     "boot_ci_mean_hi": 23.9875
+    }
+   }
+  },
+  "S5_mptcp_hsr": {
+   "documented": {
+    "outage_per_transition_s": {
+     "n": 40,
+     "mean": 6.02375,
+     "median": 4.875,
+     "iqr_lo": 1.0,
+     "iqr_hi": 12.600000000000001,
+     "boot_ci_mean_lo": 4.4275,
+     "boot_ci_mean_hi": 7.65253125
+    },
+    "emission_tx_s": {
+     "n": 40,
+     "mean": 0.0,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.0,
+     "boot_ci_mean_hi": 0.0
+    }
+   },
+   "mobike": {
+    "outage_per_transition_s": {
+     "n": 40,
+     "mean": 4.825,
+     "median": 4.825,
+     "iqr_lo": 1.0,
+     "iqr_hi": 8.65,
+     "boot_ci_mean_lo": 3.6775000000000007,
+     "boot_ci_mean_hi": 5.972500000000001
+    },
+    "emission_tx_s": {
+     "n": 40,
+     "mean": 0.0,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.0,
+     "boot_ci_mean_hi": 0.0
+    }
+   },
+   "atsss": {
+    "outage_per_transition_s": {
+     "n": 40,
+     "mean": 1.41625,
+     "median": 0.9750000000000001,
+     "iqr_lo": 0.0,
+     "iqr_hi": 2.25,
+     "boot_ci_mean_lo": 0.9324999999999999,
+     "boot_ci_mean_hi": 1.92125
+    },
+    "emission_tx_s": {
+     "n": 40,
+     "mean": 95.5875,
+     "median": 95.6,
+     "iqr_lo": 93.95,
+     "iqr_hi": 98.0,
+     "boot_ci_mean_lo": 94.75750000000001,
+     "boot_ci_mean_hi": 96.41749999999999
+    }
+   },
+   "always_warm": {
+    "outage_per_transition_s": {
+     "n": 40,
+     "mean": 1.4337500000000003,
+     "median": 0.9750000000000001,
+     "iqr_lo": 0.05,
+     "iqr_hi": 2.25,
+     "boot_ci_mean_lo": 0.9550000000000001,
+     "boot_ci_mean_hi": 1.9337499999999999
+    },
+    "emission_tx_s": {
+     "n": 40,
+     "mean": 95.5875,
+     "median": 95.6,
+     "iqr_lo": 93.95,
+     "iqr_hi": 98.0,
+     "boot_ci_mean_lo": 94.75750000000001,
+     "boot_ci_mean_hi": 96.41749999999999
+    }
+   },
+   "oracle": {
+    "outage_per_transition_s": {
+     "n": 40,
+     "mean": 0.00125,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.0,
+     "boot_ci_mean_hi": 0.0037500000000000007
+    },
+    "emission_tx_s": {
+     "n": 40,
+     "mean": 48.095,
+     "median": 16.85,
+     "iqr_lo": 4.2,
+     "iqr_hi": 94.9,
+     "boot_ci_mean_lo": 34.332375000000006,
+     "boot_ci_mean_hi": 61.9125625
+    }
+   },
+   "never_go_dark": {
+    "outage_per_transition_s": {
+     "n": 40,
+     "mean": 0.525,
+     "median": 0.525,
+     "iqr_lo": 0.05,
+     "iqr_hi": 1.0,
+     "boot_ci_mean_lo": 0.38249999999999995,
+     "boot_ci_mean_hi": 0.6675
+    },
+    "emission_tx_s": {
+     "n": 40,
+     "mean": 41.75750000000001,
+     "median": 38.2,
+     "iqr_lo": 0.0,
+     "iqr_hi": 85.30000000000001,
+     "boot_ci_mean_lo": 29.144937500000005,
+     "boot_ci_mean_hi": 54.497562500000015
+    }
+   },
+   "never_go_dark_modem": {
+    "outage_per_transition_s": {
+     "n": 40,
+     "mean": 6.02375,
+     "median": 4.875,
+     "iqr_lo": 1.0,
+     "iqr_hi": 12.600000000000001,
+     "boot_ci_mean_lo": 4.4275,
+     "boot_ci_mean_hi": 7.65253125
+    },
+    "emission_tx_s": {
+     "n": 40,
+     "mean": 0.0,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.0,
+     "boot_ci_mean_hi": 0.0
+    }
+   }
+  },
+  "S6_collective_5g_geo": {
+   "documented": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 3.2655725073537583,
+     "median": 2.7583333333333337,
+     "iqr_lo": 2.0300000000000002,
+     "iqr_hi": 3.7093750000000005,
+     "boot_ci_mean_lo": 2.821883681596182,
+     "boot_ci_mean_hi": 3.787089117739899
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 6.9575000000000005,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 3.07871875,
+     "boot_ci_mean_hi": 11.531593749999995
+    }
+   },
+   "mobike": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 1.1065565406815405,
+     "median": 0.4854166666666667,
+     "iqr_lo": 0.3166666666666667,
+     "iqr_hi": 0.9750000000000001,
+     "boot_ci_mean_lo": 0.7535904679521866,
+     "boot_ci_mean_hi": 1.5635386914300977
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 67.04,
+     "median": 71.45,
+     "iqr_lo": 35.8,
+     "iqr_hi": 97.125,
+     "boot_ci_mean_lo": 58.833281250000006,
+     "boot_ci_mean_hi": 75.02890625000002
+    }
+   },
+   "atsss": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.8486187735875234,
+     "median": 0.06000000000000001,
+     "iqr_lo": 0.048214285714285716,
+     "iqr_hi": 0.10000000000000002,
+     "boot_ci_mean_lo": 0.38172123449467205,
+     "boot_ci_mean_hi": 1.447889918068043
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 109.66624999999999,
+     "median": 117.65,
+     "iqr_lo": 98.175,
+     "iqr_hi": 130.675,
+     "boot_ci_mean_lo": 102.29987500000001,
+     "boot_ci_mean_hi": 116.24253125000001
+    }
+   },
+   "always_warm": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.8521500235875236,
+     "median": 0.0675,
+     "iqr_lo": 0.05000000000000001,
+     "iqr_hi": 0.10500000000000002,
+     "boot_ci_mean_lo": 0.38617176902958156,
+     "boot_ci_mean_hi": 1.451356840468559
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 109.66624999999999,
+     "median": 117.65,
+     "iqr_lo": 98.175,
+     "iqr_hi": 130.675,
+     "boot_ci_mean_lo": 102.29987500000001,
+     "boot_ci_mean_hi": 116.24253125000001
+    }
+   },
+   "oracle": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.5867281746031747,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.19910059523809523,
+     "boot_ci_mean_hi": 1.1199850198412695
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 51.427499999999995,
+     "median": 20.700000000000003,
+     "iqr_lo": 13.400000000000002,
+     "iqr_hi": 95.2,
+     "boot_ci_mean_lo": 41.23484375,
+     "boot_ci_mean_hi": 62.122812499999995
+    }
+   },
+   "never_go_dark": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.8718951950826952,
+     "median": 0.23500000000000001,
+     "iqr_lo": 0.15863636363636363,
+     "iqr_hi": 0.6646153846153846,
+     "boot_ci_mean_lo": 0.4859093703171829,
+     "boot_ci_mean_hi": 1.4053720689033187
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 89.4075,
+     "median": 95.9,
+     "iqr_lo": 75.575,
+     "iqr_hi": 106.325,
+     "boot_ci_mean_lo": 82.73368750000002,
+     "boot_ci_mean_hi": 95.47393749999999
+    }
+   },
+   "never_go_dark_modem": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.8515064796314796,
+     "median": 0.21625000000000003,
+     "iqr_lo": 0.15863636363636363,
+     "iqr_hi": 0.53125,
+     "boot_ci_mean_lo": 0.46375963316197694,
+     "boot_ci_mean_hi": 1.3816178820311633
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 94.19500000000001,
+     "median": 100.45,
+     "iqr_lo": 80.05000000000001,
+     "iqr_hi": 114.25,
+     "boot_ci_mean_lo": 87.36250000000001,
+     "boot_ci_mean_hi": 100.39625000000001
+    }
+   }
+  },
+  "S7_lumos_walk": {
+   "documented": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.9655714285714285,
+     "median": 0.5,
+     "iqr_lo": 0.0,
+     "iqr_hi": 1.4700000000000002,
+     "boot_ci_mean_lo": 0.7057340773809523,
+     "boot_ci_mean_hi": 1.2557065476190474
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 1.8837500000000003,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.15125000000000002,
+     "boot_ci_mean_hi": 4.438750000000001
+    }
+   },
+   "mobike": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.42870089285714286,
+     "median": 0.3333333333333333,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.5,
+     "boot_ci_mean_lo": 0.32210334821428577,
+     "boot_ci_mean_hi": 0.5578292782738095
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 23.447499999999998,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 43.725,
+     "boot_ci_mean_lo": 16.3035625,
+     "boot_ci_mean_hi": 31.091250000000002
+    }
+   },
+   "atsss": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.4266622023809524,
+     "median": 0.06000000000000001,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.15000000000000002,
+     "boot_ci_mean_lo": 0.23344929315476193,
+     "boot_ci_mean_hi": 0.6526583333333333
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 115.9825,
+     "median": 116.30000000000001,
+     "iqr_lo": 101.00000000000001,
+     "iqr_hi": 128.47500000000002,
+     "boot_ci_mean_lo": 112.29621875000001,
+     "boot_ci_mean_hi": 119.69003125
+    }
+   },
+   "always_warm": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.3282455357142857,
+     "median": 0.07500000000000001,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.15000000000000002,
+     "boot_ci_mean_lo": 0.1689261160714286,
+     "boot_ci_mean_hi": 0.5291359375
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 115.9825,
+     "median": 116.30000000000001,
+     "iqr_lo": 101.00000000000001,
+     "iqr_hi": 128.47500000000002,
+     "boot_ci_mean_lo": 112.29621875000001,
+     "boot_ci_mean_hi": 119.69003125
+    }
+   },
+   "oracle": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.013125000000000003,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.0015000000000000002,
+     "boot_ci_mean_hi": 0.030875000000000003
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 6.10125,
+     "median": 1.9000000000000001,
+     "iqr_lo": 0.0,
+     "iqr_hi": 5.0,
+     "boot_ci_mean_lo": 2.9837187500000004,
+     "boot_ci_mean_hi": 10.53253125
+    }
+   },
+   "never_go_dark": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.5459345238095239,
+     "median": 0.09,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.5,
+     "boot_ci_mean_lo": 0.3243915922619048,
+     "boot_ci_mean_hi": 0.8100829613095237
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 41.822500000000005,
+     "median": 43.35000000000001,
+     "iqr_lo": 27.325000000000003,
+     "iqr_hi": 53.425000000000004,
+     "boot_ci_mean_lo": 37.83859375,
+     "boot_ci_mean_hi": 45.86378125
+    }
+   },
+   "never_go_dark_modem": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.3999404761904762,
+     "median": 0.08,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.33999999999999997,
+     "boot_ci_mean_lo": 0.24334434523809528,
+     "boot_ci_mean_hi": 0.5824459821428569
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 43.622499999999995,
+     "median": 42.550000000000004,
+     "iqr_lo": 30.575000000000003,
+     "iqr_hi": 54.35,
+     "boot_ci_mean_lo": 39.18121875,
+     "boot_ci_mean_hi": 48.15253125
+    }
+   }
+  },
+  "S8_lumos_drive": {
+   "documented": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.8865534361471863,
+     "median": 0.4472222222222222,
+     "iqr_lo": 0.0,
+     "iqr_hi": 1.1812500000000001,
+     "boot_ci_mean_lo": 0.6331038036616162,
+     "boot_ci_mean_hi": 1.1742390873015873
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 9.6325,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 5.165000000000001,
+     "boot_ci_mean_hi": 14.545125
+    }
+   },
+   "mobike": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.33848791486291485,
+     "median": 0.21111111111111114,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.4833333333333334,
+     "boot_ci_mean_lo": 0.2589545093795094,
+     "boot_ci_mean_hi": 0.4206709314123377
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 36.1925,
+     "median": 21.950000000000003,
+     "iqr_lo": 0.0,
+     "iqr_hi": 71.97500000000001,
+     "boot_ci_mean_lo": 27.412375,
+     "boot_ci_mean_hi": 45.196343750000004
+    }
+   },
+   "atsss": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.23252245670995678,
+     "median": 0.03333333333333334,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.06000000000000001,
+     "boot_ci_mean_lo": 0.13069011431277058,
+     "boot_ci_mean_hi": 0.34709379058441564
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 119.47625000000001,
+     "median": 121.15,
+     "iqr_lo": 104.60000000000001,
+     "iqr_hi": 133.45,
+     "boot_ci_mean_lo": 115.79743749999999,
+     "boot_ci_mean_hi": 123.25515625000003
+    }
+   },
+   "always_warm": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.22423079004329005,
+     "median": 0.037500000000000006,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.06375000000000001,
+     "boot_ci_mean_lo": 0.1243141335227273,
+     "boot_ci_mean_hi": 0.33878108428030296
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 119.47625000000001,
+     "median": 121.15,
+     "iqr_lo": 104.60000000000001,
+     "iqr_hi": 133.45,
+     "boot_ci_mean_lo": 115.79743749999999,
+     "boot_ci_mean_hi": 123.25515625000003
+    }
+   },
+   "oracle": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.0025000000000000005,
+     "median": 0.0,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.0,
+     "boot_ci_mean_lo": 0.0,
+     "boot_ci_mean_hi": 0.005625000000000001
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 4.445,
+     "median": 4.5,
+     "iqr_lo": 0.0,
+     "iqr_hi": 4.6000000000000005,
+     "boot_ci_mean_lo": 3.3962500000000007,
+     "boot_ci_mean_hi": 5.548781249999999
+    }
+   },
+   "never_go_dark": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.2459738906926407,
+     "median": 0.06666666666666667,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.20416666666666666,
+     "boot_ci_mean_lo": 0.16315208333333334,
+     "boot_ci_mean_hi": 0.3382047190656564
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 46.3325,
+     "median": 48.35000000000001,
+     "iqr_lo": 34.150000000000006,
+     "iqr_hi": 57.85,
+     "boot_ci_mean_lo": 43.31,
+     "boot_ci_mean_hi": 49.37878125
+    }
+   },
+   "never_go_dark_modem": {
+    "outage_per_transition_s": {
+     "n": 80,
+     "mean": 0.5101775793650795,
+     "median": 0.275,
+     "iqr_lo": 0.0,
+     "iqr_hi": 0.873125,
+     "boot_ci_mean_lo": 0.38799861111111117,
+     "boot_ci_mean_hi": 0.6386485987103175
+    },
+    "emission_tx_s": {
+     "n": 80,
+     "mean": 33.875,
+     "median": 30.5,
+     "iqr_lo": 20.125000000000004,
+     "iqr_hi": 48.225,
+     "boot_ci_mean_lo": 30.270000000000003,
+     "boot_ci_mean_hi": 37.626312500000004
+    }
+   }
+  }
+ },
+ "ngd_vs_atsss": {
+  "S1_lte5g_walk": {
+   "outage_per_transition_s": {
+    "n_pairs": 80,
+    "mean_diff": 0.0,
+    "ngd_mean": 2.158300054112554,
+    "atsss_mean": 2.158300054112554,
+    "boot_ci_lo": 0.0,
+    "boot_ci_hi": 0.0,
+    "significant": false,
+    "favours": null
+   },
+   "emission_tx_s": {
+    "n_pairs": 80,
+    "mean_diff": 0.0,
+    "ngd_mean": 0.0,
+    "atsss_mean": 0.0,
+    "boot_ci_lo": 0.0,
+    "boot_ci_hi": 0.0,
+    "significant": false,
+    "favours": null
+   }
+  },
+  "S2_5g_leo_drive": {
+   "outage_per_transition_s": {
+    "n_pairs": 80,
+    "mean_diff": 0.06507515054390053,
+    "ngd_mean": 0.4180425477300478,
+    "atsss_mean": 0.3529673971861472,
+    "boot_ci_lo": -0.10223560380591633,
+    "boot_ci_hi": 0.22897293132215008,
+    "significant": false,
+    "favours": null
+   },
+   "emission_tx_s": {
+    "n_pairs": 80,
+    "mean_diff": -27.842499999999994,
+    "ngd_mean": 95.10499999999999,
+    "atsss_mean": 122.94750000000002,
+    "boot_ci_lo": -31.022593750000002,
+    "boot_ci_hi": -24.71990625,
+    "significant": true,
+    "favours": "NGD"
+   }
+  },
+  "S3_5g_geo_drive": {
+   "outage_per_transition_s": {
+    "n_pairs": 80,
+    "mean_diff": 0.1499375,
+    "ngd_mean": 0.6706235119047619,
+    "atsss_mean": 0.5206860119047619,
+    "boot_ci_lo": 0.0503654141865079,
+    "boot_ci_hi": 0.23325876736111115,
+    "significant": true,
+    "favours": "ATSSS"
+   },
+   "emission_tx_s": {
+    "n_pairs": 80,
+    "mean_diff": -22.353749999999998,
+    "ngd_mean": 92.87500000000001,
+    "atsss_mean": 115.22874999999999,
+    "boot_ci_lo": -25.30625,
+    "boot_ci_hi": -19.465,
+    "significant": true,
+    "favours": "NGD"
+   }
+  },
+  "S4_wifi_edge": {
+   "outage_per_transition_s": {
+    "n_pairs": 40,
+    "mean_diff": -0.5045416666666667,
+    "ngd_mean": 1.2428333333333332,
+    "atsss_mean": 1.7473750000000003,
+    "boot_ci_lo": -1.1826645833333334,
+    "boot_ci_hi": -0.07137395833333336,
+    "significant": true,
+    "favours": "NGD"
+   },
+   "emission_tx_s": {
+    "n_pairs": 40,
+    "mean_diff": -96.83500000000001,
+    "ngd_mean": 21.215,
+    "atsss_mean": 118.05,
+    "boot_ci_lo": -105.345,
+    "boot_ci_hi": -88.2174375,
+    "significant": true,
+    "favours": "NGD"
+   }
+  },
+  "S5_mptcp_hsr": {
+   "outage_per_transition_s": {
+    "n_pairs": 40,
+    "mean_diff": -0.89125,
+    "ngd_mean": 0.525,
+    "atsss_mean": 1.41625,
+    "boot_ci_lo": -1.26875,
+    "boot_ci_hi": -0.5450000000000002,
+    "significant": true,
+    "favours": "NGD"
+   },
+   "emission_tx_s": {
+    "n_pairs": 40,
+    "mean_diff": -53.83,
+    "ngd_mean": 41.75750000000001,
+    "atsss_mean": 95.5875,
+    "boot_ci_lo": -66.637625,
+    "boot_ci_hi": -40.827312500000005,
+    "significant": true,
+    "favours": "NGD"
+   }
+  },
+  "S6_collective_5g_geo": {
+   "outage_per_transition_s": {
+    "n_pairs": 80,
+    "mean_diff": 0.023276421495171496,
+    "ngd_mean": 0.8718951950826952,
+    "atsss_mean": 0.8486187735875234,
+    "boot_ci_lo": -0.16894049648268403,
+    "boot_ci_hi": 0.18514429893023643,
+    "significant": false,
+    "favours": null
+   },
+   "emission_tx_s": {
+    "n_pairs": 80,
+    "mean_diff": -20.25875,
+    "ngd_mean": 89.4075,
+    "atsss_mean": 109.66624999999999,
+    "boot_ci_lo": -23.0125,
+    "boot_ci_hi": -17.454812500000003,
+    "significant": true,
+    "favours": "NGD"
+   }
+  },
+  "S7_lumos_walk": {
+   "outage_per_transition_s": {
+    "n_pairs": 80,
+    "mean_diff": 0.11927232142857143,
+    "ngd_mean": 0.5459345238095239,
+    "atsss_mean": 0.4266622023809524,
+    "boot_ci_lo": -0.20332656250000003,
+    "boot_ci_hi": 0.45092276785714297,
+    "significant": false,
+    "favours": null
+   },
+   "emission_tx_s": {
+    "n_pairs": 80,
+    "mean_diff": -74.16,
+    "ngd_mean": 41.822500000000005,
+    "atsss_mean": 115.9825,
+    "boot_ci_lo": -78.92125000000001,
+    "boot_ci_hi": -69.38859375,
+    "significant": true,
+    "favours": "NGD"
+   }
+  },
+  "S8_lumos_drive": {
+   "outage_per_transition_s": {
+    "n_pairs": 80,
+    "mean_diff": 0.013451433982683985,
+    "ngd_mean": 0.2459738906926407,
+    "atsss_mean": 0.23252245670995678,
+    "boot_ci_lo": -0.13774652552308803,
+    "boot_ci_hi": 0.16256222830988454,
+    "significant": false,
+    "favours": null
+   },
+   "emission_tx_s": {
+    "n_pairs": 80,
+    "mean_diff": -73.14375,
+    "ngd_mean": 46.3325,
+    "atsss_mean": 119.47625000000001,
+    "boot_ci_lo": -76.77378125000001,
+    "boot_ci_hi": -69.467375,
+    "significant": true,
+    "favours": "NGD"
+   }
+  }
+ }
+}

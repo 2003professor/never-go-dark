@@ -1,0 +1,356 @@
+{
+ "seeds": [
+  300,
+  319
+ ],
+ "split": "heldout",
+ "instances": {
+  "S1_lte5g_walk": 4,
+  "S2_5g_leo_drive": 4,
+  "S3_5g_geo_drive": 4,
+  "S4_wifi_edge": 2,
+  "S5_mptcp_hsr": 2,
+  "S6_collective_5g_geo": 4,
+  "S7_lumos_walk": 4,
+  "S8_lumos_drive": 4
+ },
+ "frozen_sha256": {
+  "policies/policy.py": "b73a76a54090bf9a78822ed8350864b70d472466bf5f4ed19aa5f4254f794212",
+  "policies/variant_modem.py": "399a577897bbbf15ace1bb463ebfe3344d7dcab7b8fb210ef37ee4b84a3df34c",
+  "eval/evaluate.py": "a78f791cb2496f3c9ceb9dde3cb3a0eee1f242f1d686724e87275c4971ba9e8d",
+  "eval/metrics.py": "6bc99e46ee98b9010fec32d35bc0f7a8d045fa5ba52ea3c474d680a0cfb20441",
+  "sim/engine.py": "587d605dc8d13534fe1359add865abaaab2d8c0b772445fc848adbff59ece270",
+  "sim/gateway.py": "1b767ec8eb191110383895275e45b0e33e9b5267c7db688a9feff2d56c84c5ae",
+  "sim/bearers.py": "c3698c73eec49f65d4b15a6e852947fa8d9ef30ff1303d67b0a4af76acc081b0",
+  "sim/scenarios.py": "3081730c5e70308f2d22727dc0d7119e9539d7e1db00a2ce83369d6c5d21e950",
+  "sim/traffic.py": "f8ecd475dbdf2c0dfe4c056bdd43b93e7c5db35a281df87851f9a26173b638af",
+  "sim/params.py": "8b51f3bb92958ac4f36aed95227fb94c855aa5b35d74605a9323c0572b9aceca"
+ },
+ "runtime_s": 340,
+ "overall": {
+  "documented": {
+   "score": -1.268865846279989,
+   "gates_pass_feasible": false,
+   "aoi_p95_s": 3.879631899549278,
+   "outage_per_transition_s": 2.520323426573427,
+   "emission_tx_s": 6.723392857142857,
+   "standby_tx_s": 0.0,
+   "alert_hit_rate_feasible": 0.9522153293135436,
+   "alert_hit_rate": 0.9461197433518862,
+   "voice_within_hard_feasible": 0.9121776521486505,
+   "video_goodput": 0.7793355571629541
+  },
+  "mobike": {
+   "score": 0.1657895773996284,
+   "gates_pass_feasible": false,
+   "aoi_p95_s": 2.2633010194434746,
+   "outage_per_transition_s": 1.225706186174936,
+   "emission_tx_s": 43.28339285714286,
+   "standby_tx_s": 0.0,
+   "alert_hit_rate_feasible": 0.9861989795918366,
+   "alert_hit_rate": 0.9801033936301792,
+   "voice_within_hard_feasible": 0.9615818876631717,
+   "video_goodput": 0.8031825763722941
+  },
+  "atsss": {
+   "score": 0.09742337583535132,
+   "gates_pass_feasible": false,
+   "aoi_p95_s": 2.171109338016913,
+   "outage_per_transition_s": 0.8745099136974137,
+   "emission_tx_s": 98.58857142857143,
+   "standby_tx_s": 97.4223214285695,
+   "alert_hit_rate_feasible": 0.9911862244897959,
+   "alert_hit_rate": 0.9850906385281385,
+   "voice_within_hard_feasible": 0.9703539628107047,
+   "video_goodput": 0.7833539257128301
+  },
+  "always_warm": {
+   "score": 0.1424120020306855,
+   "gates_pass_feasible": false,
+   "aoi_p95_s": 2.1588273210747566,
+   "outage_per_transition_s": 0.8614469176656677,
+   "emission_tx_s": 98.58857142857143,
+   "standby_tx_s": 97.28446428571237,
+   "alert_hit_rate_feasible": 0.9921386054421768,
+   "alert_hit_rate": 0.9860430194805194,
+   "voice_within_hard_feasible": 0.9723873085427239,
+   "video_goodput": 0.7892942795407265
+  },
+  "oracle": {
+   "score": 0.7593219537938359,
+   "gates_pass_feasible": false,
+   "aoi_p95_s": 1.8911237107400574,
+   "outage_per_transition_s": 0.5411248518346733,
+   "emission_tx_s": 30.033571428571427,
+   "standby_tx_s": 5.417499999999999,
+   "alert_hit_rate_feasible": 0.994638605442177,
+   "alert_hit_rate": 0.9885430194805194,
+   "voice_within_hard_feasible": 0.9820223951610071,
+   "video_goodput": 0.8409206049732755
+  },
+  "never_go_dark": {
+   "score": 0.37298142892884495,
+   "gates_pass_feasible": false,
+   "aoi_p95_s": 2.002169800545951,
+   "outage_per_transition_s": 0.827812341428413,
+   "emission_tx_s": 56.71857142857143,
+   "standby_tx_s": 48.67696428571416,
+   "alert_hit_rate_feasible": 0.9918537414965987,
+   "alert_hit_rate": 0.9857581555349413,
+   "voice_within_hard_feasible": 0.9811442260287366,
+   "video_goodput": 0.8442805662342768
+  },
+  "never_go_dark_modem": {
+   "score": -0.12302126540131592,
+   "gates_pass_feasible": false,
+   "aoi_p95_s": 2.554360379846082,
+   "outage_per_transition_s": 1.2251967135047495,
+   "emission_tx_s": 53.59464285714286,
+   "standby_tx_s": 46.43446428571407,
+   "alert_hit_rate_feasible": 0.9839965986394557,
+   "alert_hit_rate": 0.9779010126777982,
+   "voice_within_hard_feasible": 0.9686917268643488,
+   "video_goodput": 0.8309247195424234
+  }
+ },
+ "per_scenario": {
+  "documented": {
+   "S1_lte5g_walk": [
+    2.158300054112554,
+    0.0
+   ],
+   "S2_5g_leo_drive": [
+    3.2181678495116004,
+    8.946250000000001
+   ],
+   "S3_5g_geo_drive": [
+    2.9679945436507937,
+    10.8375
+   ],
+   "S4_wifi_edge": [
+    2.3364583333333337,
+    17.612500000000004
+   ],
+   "S5_mptcp_hsr": [
+    6.02375,
+    0.0
+   ],
+   "S6_collective_5g_geo": [
+    3.2655725073537583,
+    6.9575000000000005
+   ],
+   "S7_lumos_walk": [
+    0.9655714285714285,
+    1.8837500000000003
+   ],
+   "S8_lumos_drive": [
+    0.8865534361471863,
+    9.6325
+   ]
+  },
+  "mobike": {
+   "S1_lte5g_walk": [
+    1.8487203733766235,
+    0.0
+   ],
+   "S2_5g_leo_drive": [
+    0.71304901001776,
+    85.99875
+   ],
+   "S3_5g_geo_drive": [
+    0.9429702380952382,
+    80.5425
+   ],
+   "S4_wifi_edge": [
+    1.5779166666666666,
+    19.525
+   ],
+   "S5_mptcp_hsr": [
+    4.825,
+    0.0
+   ],
+   "S6_collective_5g_geo": [
+    1.1065565406815405,
+    67.04
+   ],
+   "S7_lumos_walk": [
+    0.42870089285714286,
+    23.447499999999998
+   ],
+   "S8_lumos_drive": [
+    0.33848791486291485,
+    36.1925
+   ]
+  },
+  "atsss": {
+   "S1_lte5g_walk": [
+    2.158300054112554,
+    0.0
+   ],
+   "S2_5g_leo_drive": [
+    0.3529673971861472,
+    122.94750000000002
+   ],
+   "S3_5g_geo_drive": [
+    0.5206860119047619,
+    115.22874999999999
+   ],
+   "S4_wifi_edge": [
+    1.7473750000000003,
+    118.05
+   ],
+   "S5_mptcp_hsr": [
+    1.41625,
+    95.5875
+   ],
+   "S6_collective_5g_geo": [
+    0.8486187735875234,
+    109.66624999999999
+   ],
+   "S7_lumos_walk": [
+    0.4266622023809524,
+    115.9825
+   ],
+   "S8_lumos_drive": [
+    0.23252245670995678,
+    119.47625000000001
+   ]
+  },
+  "always_warm": {
+   "S1_lte5g_walk": [
+    2.158300054112554,
+    0.0
+   ],
+   "S2_5g_leo_drive": [
+    0.35312364718614725,
+    122.94750000000002
+   ],
+   "S3_5g_geo_drive": [
+    0.5241408730158731,
+    115.22874999999999
+   ],
+   "S4_wifi_edge": [
+    1.746125,
+    118.05
+   ],
+   "S5_mptcp_hsr": [
+    1.4337500000000003,
+    95.5875
+   ],
+   "S6_collective_5g_geo": [
+    0.8521500235875236,
+    109.66624999999999
+   ],
+   "S7_lumos_walk": [
+    0.3282455357142857,
+    115.9825
+   ],
+   "S8_lumos_drive": [
+    0.22423079004329005,
+    119.47625000000001
+   ]
+  },
+  "oracle": {
+   "S1_lte5g_walk": [
+    2.158300054112554,
+    0.0
+   ],
+   "S2_5g_leo_drive": [
+    0.07022916666666666,
+    50.191250000000004
+   ],
+   "S3_5g_geo_drive": [
+    0.39234573412698415,
+    57.553750000000015
+   ],
+   "S4_wifi_edge": [
+    1.1280416666666666,
+    32.9375
+   ],
+   "S5_mptcp_hsr": [
+    0.00125,
+    48.095
+   ],
+   "S6_collective_5g_geo": [
+    0.5867281746031747,
+    51.427499999999995
+   ],
+   "S7_lumos_walk": [
+    0.013125000000000003,
+    6.10125
+   ],
+   "S8_lumos_drive": [
+    0.0025000000000000005,
+    4.445
+   ]
+  },
+  "never_go_dark": {
+   "S1_lte5g_walk": [
+    2.158300054112554,
+    0.0
+   ],
+   "S2_5g_leo_drive": [
+    0.4180425477300478,
+    95.10499999999999
+   ],
+   "S3_5g_geo_drive": [
+    0.6706235119047619,
+    92.87500000000001
+   ],
+   "S4_wifi_edge": [
+    1.2428333333333332,
+    21.215
+   ],
+   "S5_mptcp_hsr": [
+    0.525,
+    41.75750000000001
+   ],
+   "S6_collective_5g_geo": [
+    0.8718951950826952,
+    89.40875000000001
+   ],
+   "S7_lumos_walk": [
+    0.5459345238095239,
+    41.822500000000005
+   ],
+   "S8_lumos_drive": [
+    0.2459738906926407,
+    46.3325
+   ]
+  },
+  "never_go_dark_modem": {
+   "S1_lte5g_walk": [
+    2.158300054112554,
+    0.0
+   ],
+   "S2_5g_leo_drive": [
+    0.36576738539238546,
+    96.14750000000001
+   ],
+   "S3_5g_geo_drive": [
+    0.6565183531746033,
+    97.75125
+   ],
+   "S4_wifi_edge": [
+    1.2445833333333334,
+    19.145
+   ],
+   "S5_mptcp_hsr": [
+    6.02375,
+    0.0
+   ],
+   "S6_collective_5g_geo": [
+    0.8515064796314796,
+    94.19500000000001
+   ],
+   "S7_lumos_walk": [
+    0.3999404761904762,
+    43.622499999999995
+   ],
+   "S8_lumos_drive": [
+    0.5101775793650795,
+    33.87375
+   ]
+  }
+ }
+}
