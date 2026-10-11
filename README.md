@@ -52,7 +52,7 @@ Full numbers and their sources: [`results/FINDINGS.md`](results/FINDINGS.md) and
 | `results/` | `FINDINGS.md` (single source of truth for every number), the key result JSONs, `CLAIMS.md` (number → source) |
 | `reference/` | `CONTEXT.md`, `ARCHITECTURE-MAP.md` (the documented/inferred KATIM mapping), `TRACES.md` (the datasets) |
 | `proposal/` | the 10-slide proposal deck (PDF) |
-| `docs/` | the interactive console, served by GitHub Pages |
+| `site/` | the interactive console + the proposal deck (PDF), served by GitHub Pages |
 
 ## How to run
 
@@ -71,7 +71,7 @@ python3 run_batch.py        # the resumable 60-run batch
 # live view: python3 live_server.py  → open the console's LIVE mode at localhost:8099
 ```
 
-**Interactive console:** open **https://2003professor.github.io/never-go-dark/** (or `docs/console.html` locally — it is a single
+**Interactive console:** open **https://2003professor.github.io/never-go-dark/** (or `site/console.html` locally — it is a single
 self-contained offline file). **Best viewed on a desktop or laptop**, not a phone.
 
 ## Data & provenance
