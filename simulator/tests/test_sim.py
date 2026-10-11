@@ -44,6 +44,45 @@ def _any_trace():
     return t[ds][tid], ds, tid
 
 
+# --- graceful skip when the measured datasets are not present --------------
+# The real traces are not redistributed here (third-party licences; see
+# ../SOURCES.md). Data-dependent tests SKIP with a clear message instead of
+# failing, so a fresh clone still runs the pure-logic invariant tests. Works
+# under both `pytest` and `python tests/test_sim.py`.
+class _SkipTest(Exception):
+    """Raised to skip a data-dependent test when no traces are bundled."""
+
+
+_HAVE_TRACES = bool(discover_traces())
+
+
+def _need_traces():
+    msg = ("measured datasets are not bundled (third-party licences; see "
+           "SOURCES.md) - obtain them to run this test")
+    if "pytest" in sys.modules:            # under pytest: a real skip
+        import pytest
+        pytest.skip(msg)
+    raise _SkipTest(msg)                    # under `python tests/test_sim.py`
+
+
+# Route the two data accessors through the guard so every data-dependent test
+# skips uniformly. When traces ARE present these are transparent pass-throughs.
+_discover_traces_impl = discover_traces
+_build_scenarios_impl = build_scenarios
+
+
+def discover_traces():                      # noqa: F811 - intentional test guard
+    if not _HAVE_TRACES:
+        _need_traces()
+    return _discover_traces_impl()
+
+
+def build_scenarios(*args, **kwargs):       # noqa: F811 - intentional test guard
+    if not _HAVE_TRACES:
+        _need_traces()
+    return _build_scenarios_impl(*args, **kwargs)
+
+
 # --- 1. zero-order hold, never interpolation -------------------------------
 def test_replay_is_zero_order_hold_not_interpolation():
     path, ds, tid = _any_trace()
@@ -596,7 +635,7 @@ def test_episode_randomisation_secret_for_heldout():
 
 # --- 8. §13.2 Starlink concatenation never fills ---------------------------
 def test_starlink_concatenation_never_fills_gaps():
-    from sim.bearers import build_leo_concatenated, discover_traces
+    from sim.bearers import build_leo_concatenated  # discover_traces: module-level guard
     tr = discover_traces().get("starlink_road", {})
     tid = sorted(tr)[0]
     b = build_leo_concatenated(tr[tid], tid, seed=0)
@@ -813,7 +852,7 @@ def test_constant_timer_gamer_does_not_beat_standards_on_score():
 
 # --- 15. §13.8 capacity = uplink direction; RTT drawn where absent ----------
 def test_capacity_is_uplink_direction():
-    from sim.bearers import TraceReplayBearer, discover_traces, ul_dl_ratio
+    from sim.bearers import ul_dl_ratio  # TraceReplayBearer/discover_traces: module-level
     tr = discover_traces()["ucc4g"]
     tid = sorted(tr)[0]
     b = TraceReplayBearer(tr[tid], "ucc4g", tid)
@@ -857,14 +896,19 @@ def test_s7_standby_is_pedestrian_not_bus():
 if __name__ == "__main__":
     import traceback
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
-    passed = 0
+    passed = skipped = failed = 0
     for fn in fns:
         try:
             fn()
             print(f"PASS {fn.__name__}")
             passed += 1
+        except _SkipTest as e:
+            print(f"SKIP {fn.__name__}: {e}")
+            skipped += 1
         except Exception:
             print(f"FAIL {fn.__name__}")
             traceback.print_exc()
-    print(f"\n{passed}/{len(fns)} passed")
-    sys.exit(0 if passed == len(fns) else 1)
+            failed += 1
+    extra = f", {skipped} skipped (datasets not bundled)" if skipped else ""
+    print(f"\n{passed}/{len(fns)} passed{extra}")
+    sys.exit(0 if failed == 0 else 1)

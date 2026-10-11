@@ -40,8 +40,11 @@ python tests/test_sim.py           #  (or: python -m pytest tests/ -q)
 python -m predictor.events
 ```
 
-`make reproduce`, `make test` and `make traces` wrap these. No network is needed
-at run time; trace parsing (obtaining + parsing the datasets) is a separate step.
+`make reproduce` and `make test` wrap these. No network is needed at run time.
+The measured datasets are **not bundled** (third-party licences — see
+[`../SOURCES.md`](../SOURCES.md)): `make reproduce` needs them; `make test`'s
+pure-logic invariants run without them (data-dependent tests skip cleanly).
+Trace processing (raw → `traces/processed/`) is a separate step, not a target.
 
 ## What it models (SPEC pointers)
 

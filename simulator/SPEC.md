@@ -389,7 +389,7 @@ Frozen seed set `SEEDS = [0,1,2,3,4]` for train; held-out uses `SEEDS_HELDOUT = 
 ```
 python -m eval.evaluate --split heldout --policy policies/policy.py --seeds heldout --out report/figures/
 ```
-reproduces every headline number and figure from the processed traces with no network access and no human input. A `make reproduce` wraps it. `python -m eval.evaluate --sweeps all` runs S-TICK, S-GAP, S-GEO, S-DPD, S-HS-ROUNDS, S-HS-BYTES, S-ROAM, S-PLI, S-ALERT-RATE, S-VOICE-CODEC, S-VIDEO, S-WIN, S-EVENT, S-WEIGHTS and emits the sensitivity tables. Trace download/parse is a **separate** `make traces` step (so evaluation never depends on the network at run time).
+reproduces every headline number and figure from the processed traces with no network access and no human input. A `make reproduce` wraps it. `python -m eval.evaluate --sweeps all` runs S-TICK, S-GAP, S-GEO, S-DPD, S-HS-ROUNDS, S-HS-BYTES, S-ROAM, S-PLI, S-ALERT-RATE, S-VOICE-CODEC, S-VIDEO, S-WIN, S-EVENT, S-WEIGHTS and emits the sensitivity tables. Trace download/parse is a **separate** step from the raw datasets (see `../SOURCES.md`), so evaluation never depends on the network at run time.
 
 ### 10.4 Code layout (matches PLAN.md)
 ```

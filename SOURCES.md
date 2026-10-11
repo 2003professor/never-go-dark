@@ -20,6 +20,14 @@ in [`reference/TRACES.md`](reference/TRACES.md).
 FCC *Measuring Broadband America*, satellite subset; rain-fade / RTT physics from published measurements). It is labelled **MODEL**, never
 "replayed". Scenarios that combine independently-measured legs are labelled **STITCHED**; the HSR rail capture is **REAL SIMULTANEOUS**.
 
+## From raw datasets to processed traces
+
+Each raw dataset is converted to **one processed trace per run**, in a single unified schema (`t_s, bearer, dl_mbps, ul_mbps, rtt_ms, loss`;
+monotonic time base; one row per real sample; never interpolated — zero-order hold). Every processed file maps 1:1 to exactly one raw run
+(provenance). The schema and the per-dataset column mapping are specified in [`simulator/SPEC.md`](simulator/SPEC.md) §3.3–3.8; the simulator
+discovers processed traces under `traces/processed/<dataset>/`. The dataset-specific parsers that perform this step are **not bundled** (each
+reads a third-party raw layout directly, and the raw data is not redistributed here). The frozen evaluation outputs are in [`results/`](results/).
+
 ## KATIM / EDGE public documentation (referenced, not reproduced)
 
 The documented 9001-R design we adapt is derived from EDGE's **public** KATIM materials (product datasheets, the gateway family datasheet,

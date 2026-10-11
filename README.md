@@ -61,10 +61,14 @@ Full numbers: [`results/FINDINGS.md`](results/FINDINGS.md) (the findings) and [`
 > deck carry the headline numbers directly. (The prototype's rail / corkleo setups use the committed `timelines/` and need no
 > external trace.)
 
-**Simulator** (Python 3, numpy):
+**Dependencies** (Python 3.9+): `pip install -r requirements.txt` — numpy and pandas for the simulator; scikit-learn and matplotlib for predictor training and figures.
+
+**Simulator:**
 ```bash
-cd simulator && make        # or: python3 -m eval.evaluate
-python3 predictor/train.py  # trains the collapse predictor
+cd simulator
+make test                   # fast invariant tests (data-dependent ones skip without the datasets)
+make reproduce              # every baseline on the TRAIN split → results + figures (needs the datasets)
+python3 predictor/train.py  # trains the collapse predictor (needs the datasets)
 ```
 
 **Prototype** (real WireGuard in two Docker containers):
