@@ -1,0 +1,37 @@
+{
+ "run": "reactive_final",
+ "mode": "reactive",
+ "voice_sent": 4500,
+ "voice_received": 4301,
+ "dark_gaps": 3,
+ "dark_s": 3.9,
+ "longest_dark_s": 2.46,
+ "owd_p50_ms": 46.2,
+ "owd_p95_ms": 351.7,
+ "voice_le_150ms": 0.483,
+ "voice_le_400ms": 0.91,
+ "standby_s": 2.43,
+ "bearer_b_tx_bytes": 11749952,
+ "events": [
+  "0.0s route wga",
+  "47.1s dead a",
+  "54.1s hs_start wgb",
+  "56.5s hs_done 2.43s",
+  "56.5s route wgb"
+ ],
+ "dark_windows_s": [
+  [
+   43.46,
+   45.92
+  ],
+  [
+   47.98,
+   48.28
+  ],
+  [
+   49.94,
+   51.08
+  ]
+ ],
+ "link_unusable_s": 14
+}

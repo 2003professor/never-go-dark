@@ -1,0 +1,44 @@
+{
+ "run": "ngd_final",
+ "mode": "ngd",
+ "voice_sent": 4500,
+ "voice_received": 4478,
+ "dark_gaps": 1,
+ "dark_s": 0.44,
+ "longest_dark_s": 0.44,
+ "owd_p50_ms": 38.5,
+ "owd_p95_ms": 301.2,
+ "voice_le_150ms": 0.689,
+ "voice_le_400ms": 0.992,
+ "standby_s": 63.24,
+ "bearer_b_tx_bytes": 8562708,
+ "events": [
+  "0.1s route wga",
+  "0.1s predict warm_b",
+  "0.1s hs_start wgb",
+  "2.5s hs_done 2.41s",
+  "44.9s route wgb",
+  "67.9s predict warm_a",
+  "67.9s hs_start wga",
+  "68.1s hs_done 0.23s",
+  "68.2s route wga",
+  "68.3s predict warm_b",
+  "68.3s hs_start wgb",
+  "70.1s hs_done 1.82s",
+  "75.5s route wgb",
+  "78.6s predict warm_a",
+  "78.6s hs_start wga",
+  "78.9s hs_done 0.23s",
+  "79.0s route wga",
+  "79.1s predict warm_b",
+  "79.1s hs_start wgb",
+  "80.9s hs_done 1.81s"
+ ],
+ "dark_windows_s": [
+  [
+   44.12,
+   44.56
+  ]
+ ],
+ "link_unusable_s": 14
+}

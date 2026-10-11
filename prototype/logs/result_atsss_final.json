@@ -1,0 +1,31 @@
+{
+ "run": "atsss_final",
+ "mode": "atsss",
+ "voice_sent": 4500,
+ "voice_received": 4445,
+ "dark_gaps": 1,
+ "dark_s": 1.04,
+ "longest_dark_s": 1.04,
+ "owd_p50_ms": 38.8,
+ "owd_p95_ms": 301.6,
+ "voice_le_150ms": 0.666,
+ "voice_le_400ms": 0.982,
+ "standby_s": 89.52,
+ "bearer_b_tx_bytes": 9171430,
+ "events": [
+  "0.0s route wga",
+  "0.6s hs_start wgb",
+  "3.0s hs_done 2.43s",
+  "45.0s route wgb",
+  "67.2s route wga",
+  "76.5s route wgb",
+  "82.2s route wga"
+ ],
+ "dark_windows_s": [
+  [
+   43.66,
+   44.7
+  ]
+ ],
+ "link_unusable_s": 14
+}

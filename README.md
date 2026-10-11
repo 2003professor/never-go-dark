@@ -41,7 +41,7 @@ Evaluated **once** on a held-out split (28 instances across 8 scenarios, 7 real 
 - **Confirmed on real WireGuard tunnels:** the shipped policy, run unmodified, had the smallest voice-dark gap — **0.44 s** vs 3.90 s
   (documented), 1.04 s (ATSSS), 0.76 s (MOBIKE); repeated **60 runs** across 3 bearer setups, least-dark in all three.
 
-Full numbers: the headline table above, the frozen result files in [`results/`](results/), and the 10-slide deck in [`proposal/`](proposal/).
+Full numbers: [`results/FINDINGS.md`](results/FINDINGS.md) (the findings) and [`results/CLAIMS.md`](results/CLAIMS.md) (every figure → its source file); the frozen result JSONs are in [`results/`](results/).
 
 ## Repository layout
 
@@ -49,7 +49,7 @@ Full numbers: the headline table above, the frozen result files in [`results/`](
 |---|---|
 | `simulator/` | the frozen simulator: `sim/` (engine, gateway, bearers, scenarios), `policies/` (`policy.py` = the shipped Never Go Dark policy, plus the baselines), `predictor/` (the no-modem collapse predictor), `eval/` (the frozen evaluator + the one-shot held-out test), `results/` (result JSONs), `SPEC.md` |
 | `prototype/` | the real WireGuard-in-Docker prototype: `scripts/` (bearer replay with `tc netem`, the controllers, HQ services), `docker-compose.yml`, `run_demo.sh`, `run_batch.py` (the 60-run batch), `live_server.py` (host-side live telemetry feed) |
-| `results/` | the frozen result JSONs: held-out one-shot, predictor, the 60-run prototype repeats, noise-floor CIs, planes experiment |
+| `results/` | `FINDINGS.md` (the findings), `CLAIMS.md` (number → source register), and the frozen result JSONs: held-out one-shot, per-tick held-out timelines (`heldout.json`), predictor, the 60-run prototype repeats, noise-floor CIs, planes experiment |
 | `reference/` | `CONTEXT.md`, `ARCHITECTURE-MAP.md` (the documented/inferred KATIM mapping), `TRACES.md` (the datasets) |
 | `proposal/` | the 10-slide proposal deck (PDF) |
 | `site/` | the interactive console + the proposal deck (PDF), served by GitHub Pages |

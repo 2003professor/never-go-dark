@@ -1,0 +1,27 @@
+{
+ "run": "mobike_final",
+ "mode": "mobike",
+ "voice_sent": 4500,
+ "voice_received": 4459,
+ "dark_gaps": 1,
+ "dark_s": 0.76,
+ "longest_dark_s": 0.76,
+ "owd_p50_ms": 300.1,
+ "owd_p95_ms": 301.9,
+ "voice_le_150ms": 0.485,
+ "voice_le_400ms": 0.966,
+ "standby_s": 0.0,
+ "bearer_b_tx_bytes": 10081810,
+ "events": [
+  "0.0s route wgm",
+  "47.0s dead m",
+  "47.0s roam wgm->bearer_b"
+ ],
+ "dark_windows_s": [
+  [
+   43.62,
+   44.38
+  ]
+ ],
+ "link_unusable_s": 14
+}
