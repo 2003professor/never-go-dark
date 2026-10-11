@@ -25,8 +25,10 @@ FCC *Measuring Broadband America*, satellite subset; rain-fade / RTT physics fro
 Each raw dataset is converted to **one processed trace per run**, in a single unified schema (`t_s, bearer, dl_mbps, ul_mbps, rtt_ms, loss`;
 monotonic time base; one row per real sample; never interpolated — zero-order hold). Every processed file maps 1:1 to exactly one raw run
 (provenance). The schema and the per-dataset column mapping are specified in [`simulator/SPEC.md`](simulator/SPEC.md) §3.3–3.8; the simulator
-discovers processed traces under `traces/processed/<dataset>/`. The dataset-specific parsers that perform this step are **not bundled** (each
-reads a third-party raw layout directly, and the raw data is not redistributed here). The frozen evaluation outputs are in [`results/`](results/).
+discovers processed traces under `traces/processed/<dataset>/`. The dataset-specific parsers are included in
+[`simulator/traces/parsers/`](simulator/traces/parsers/): place the raw downloads under `simulator/traces/raw/<dataset>/` and run `make traces`
+(from `simulator/`) to build the processed traces — see [`REPRODUCE.md`](REPRODUCE.md). The raw data itself is not redistributed here. The
+frozen evaluation outputs are in [`results/`](results/).
 
 ## KATIM / EDGE public documentation (referenced, not reproduced)
 

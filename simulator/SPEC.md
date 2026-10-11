@@ -134,7 +134,7 @@ Mapping:
 | `speed_kmh` | `Speed` | float | [I] km/h: GPS speed, 0 when static; sweep not needed |
 | `lat`,`lon` | `Latitude`,`Longitude` | float | deg |
 
-UCC 5G gives the real **5G↔LTE `NetworkMode` switch** (the LTE↔5G transition scenario). UCC 4G LTE gives pedestrian/tram/train breadth. Lumos5G (login, teammate) adds the sharpest mmWave collapses and ships `RSRP/SINR/tower_id/nrStatus`; if the login is not done by end of D-4, the pipeline runs on UCC alone and the write-up says so (no dependency on it existing).
+UCC 5G gives the real **5G↔LTE `NetworkMode` switch** (the LTE↔5G transition scenario). UCC 4G LTE gives pedestrian/tram/train breadth. Lumos5G (requires free registration to download) adds the sharpest mmWave collapses and ships `RSRP/SINR/tower_id/nrStatus`.
 
 ### 3.3 LEO — replay (Starlink on the Road)
 Two source files, **joined by time window, not interpolated**:
@@ -276,7 +276,7 @@ Events are **derived** from the processed CSV at run/predictor time by one publi
 - **RTT step**: `rtt_ms` jumps by ≥ `RTT_STEP` (default **×2** and ≥100 ms) [I];
 - **throughput collapse**: `dl_mbps` drops by ≥ `TPUT_DROP` (default **5×**) within ≤2 s [I];
 - **gap/outage**: a §2.3 UNUSABLE interval begins.
-**Validate** the rule on **Berlin V2X** (event-based cell identity ground truth; login, teammate) and report precision/recall of the rule against its labels (TRACES.md §1 row 8). If Berlin V2X is not available by D-2, validate on the UCC 5G `NetworkMode` switch (self-contained ground truth) and say so. **Sweep S-EVENT** over `RTT_STEP`, `TPUT_DROP`. These thresholds define the *label*; the predictor (§7) must not see the future, only the label's causal features.
+**Validate** the rule on **Berlin V2X** (event-based cell identity ground truth; requires registration to download) and report precision/recall of the rule against its labels (TRACES.md §1 row 8). If Berlin V2X is unavailable, validate on the UCC 5G `NetworkMode` switch (self-contained ground truth) and say so. **Sweep S-EVENT** over `RTT_STEP`, `TPUT_DROP`. These thresholds define the *label*; the predictor (§7) must not see the future, only the label's causal features.
 
 ### 6.4 Train / held-out split — BY TRACE, never by time slice
 The autoresearch loop and predictor training see only the **train** trace set; final numbers come from a disjoint **held-out** trace set. Split rule (frozen in `eval.py`): partition **at the granularity of a whole processed trace/run id**, hashed `sha1(trace_id) % 5 == 0 → held-out` (≈20%), so no run is split across train/held-out and the loop can never see a held-out trace even partially. Scenarios built from held-out traces are the held-out scenarios. We never split a single trace by time window (that would leak the transition the policy is tested on). GEO model seeds are likewise partitioned: held-out evaluation uses seeds the loop never ran.
@@ -320,7 +320,7 @@ class Action:
 `timer_override` is clamped to documented-plausible ranges (e.g. `ka_s∈[0.25,5]`). `warm_standby`/`cutover` drive the §4.3 handshake cost and the §4.4 roaming switch; standby tunnels get **fresh independent keys** and may never reuse keys (CONTEXT.md P2 security constraint) — the engine enforces this and scores any violation as **invalid** (run discarded).
 
 ### 7.4 Forbidden (hard, enforced by the harness — not just honour system)
-The policy process receives **only** the `Obs` object. It has no handle to the engine, the trace arrays, the scenario transition schedule, future samples, the oracle, the RNG, or the metrics. Any attempt to import engine internals fails. This is what makes "observable inputs only" auditable (CONTEXT.md §4; PLAN.md "The policy may read only what a real gateway could observe").
+The policy process receives **only** the `Obs` object. It has no handle to the engine, the trace arrays, the scenario transition schedule, future samples, the oracle, the RNG, or the metrics. Any attempt to import engine internals fails. This is what makes "observable inputs only" auditable (CONTEXT.md §4).
 
 ### 7.5 Security invariants (scored invalid if broken)
 No protocol/key-derivation/crypto change; timing and triggers of standard handshakes only (CONTEXT.md P2). Standby keys fresh and independent. Per-plane key isolation and anti-replay windows are the engine's, not the policy's, to manage.
@@ -360,7 +360,7 @@ else:
              + w_tx   * standby_tx_s / base_tx )
            + w_vid * video_goodput / base_video
 ```
-Weights frozen in `eval.py`, default `w_aoi=1.0, w_out=1.0, w_ovh=0.3, w_tx=0.3, w_vid=0.2`; normalised by the **documented-static baseline** so 0 = baseline-parity and the loop maximises a dimensionless margin. The loop sees only this scalar and `gates_pass`; it never sees the weights change, the held-out traces, or per-metric internals it could overfit. **Sweep S-WEIGHTS**: report the Pareto front (outage vs emissions) so the ranking does not hinge on one weight vector (PLAN.md "outage-vs-emissions curve").
+Weights frozen in `eval.py`, default `w_aoi=1.0, w_out=1.0, w_ovh=0.3, w_tx=0.3, w_vid=0.2`; normalised by the **documented-static baseline** so 0 = baseline-parity and the loop maximises a dimensionless margin. The loop sees only this scalar and `gates_pass`; it never sees the weights change, the held-out traces, or per-metric internals it could overfit. **Sweep S-WEIGHTS**: report the Pareto front (outage vs emissions) so the ranking does not hinge on one weight vector.
 
 ---
 
@@ -380,7 +380,7 @@ Sees the true transition schedule and future trace values; warms exactly in time
 ## 10. Evaluator freeze + reproducibility
 
 ### 10.1 Freeze
-At end-of-D-4 sign-off, these are frozen and change-controlled (any change invalidates prior numbers and is logged): `sim/engine.py`, `sim/gateway.py`, `sim/traffic.py`, `sim/scenarios.py`, `eval/evaluate.py`, the scenario matrix (§6.2), the metric definitions (§8), the baselines (§9), the GEO parameter table (§3.6), and this SPEC. The **only** files that change after freeze are `policies/policy.py` and `policies/continuity_policy.py`, plus `loop/autoresearch.py`'s log.
+At sign-off these are frozen and change-controlled (any change invalidates prior numbers and is logged): `sim/engine.py`, `sim/gateway.py`, `sim/traffic.py`, `sim/scenarios.py`, `eval/evaluate.py`, the scenario matrix (§6.2), the metric definitions (§8), the baselines (§9), the GEO parameter table (§3.6), and this SPEC. The **only** files that change after freeze are `policies/policy.py` and `policies/continuity_policy.py`.
 
 ### 10.2 Seeds
 Frozen seed set `SEEDS = [0,1,2,3,4]` for train; held-out uses `SEEDS_HELDOUT = [100,101,102,103,104]` (disjoint; §6.4). Every reported number is mean ± std over the seed set. One global `PCG64` per (scenario, seed).
@@ -389,11 +389,11 @@ Frozen seed set `SEEDS = [0,1,2,3,4]` for train; held-out uses `SEEDS_HELDOUT = 
 ```
 python -m eval.evaluate --split heldout --policy policies/policy.py --seeds heldout --out report/figures/
 ```
-reproduces every headline number and figure from the processed traces with no network access and no human input. A `make reproduce` wraps it. `python -m eval.evaluate --sweeps all` runs S-TICK, S-GAP, S-GEO, S-DPD, S-HS-ROUNDS, S-HS-BYTES, S-ROAM, S-PLI, S-ALERT-RATE, S-VOICE-CODEC, S-VIDEO, S-WIN, S-EVENT, S-WEIGHTS and emits the sensitivity tables. Trace download/parse is a **separate** step from the raw datasets (see `../SOURCES.md`), so evaluation never depends on the network at run time.
+reproduces every headline number and figure from the processed traces with no network access and no human input. A `make reproduce` wraps it. `python -m eval.evaluate --sweeps all` runs S-TICK, S-GAP, S-GEO, S-DPD, S-HS-ROUNDS, S-HS-BYTES, S-ROAM, S-PLI, S-ALERT-RATE, S-VOICE-CODEC, S-VIDEO, S-WIN, S-EVENT, S-WEIGHTS and emits the sensitivity tables. Trace download/parse is a **separate** `make traces` step from the raw datasets (parsers in `traces/parsers/`; see `../SOURCES.md`), so evaluation never depends on the network at run time.
 
-### 10.4 Code layout (matches PLAN.md)
+### 10.4 Code layout
 ```
-katim-sim/
+simulator/
   SPEC.md                         this file (frozen)
   traces/raw/                     downloaded real traces (provenance)
   traces/processed/<dataset>/     unified-schema CSVs + DATACARD.md (§3)
@@ -407,9 +407,7 @@ katim-sim/
   policies/policy.py              EDITABLE — P1 freshness
   policies/continuity_policy.py   EDITABLE — P2 make-before-break
   predictor/                      feature extraction, §6.3 event labels, training (train split only)
-  eval/evaluate.py                FROZEN metrics + by-trace split + scalar score (§8,§6.4)
-  loop/autoresearch.py            agent edits policy → evaluate(train) → keep/revert → log
-  report/figures/
+  eval/evaluate.py                FROZEN metrics + by-trace split + scalar score (§8,§6.4)  report/figures/
 ```
 
 ---

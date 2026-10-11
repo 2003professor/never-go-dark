@@ -2,7 +2,7 @@
 
 The transition-event rule itself lives in ``sim.scenarios.extract_events``
 (one published rule per signal, OR-combined, causal features only). This module
-wraps it for the D-2 predictor work and provides the self-contained validation
+wraps it for the predictor work and provides the self-contained validation
 the spec asks for: precision/recall of the rule against the UCC 5G
 ``NetworkMode`` switch (ground truth that ships in the trace), used when Berlin
 V2X is not available. No future information is used.

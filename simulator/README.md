@@ -44,7 +44,8 @@ python -m predictor.events
 The measured datasets are **not bundled** (third-party licences — see
 [`../SOURCES.md`](../SOURCES.md)): `make reproduce` needs them; `make test`'s
 pure-logic invariants run without them (data-dependent tests skip cleanly).
-Trace processing (raw → `traces/processed/`) is a separate step, not a target.
+Trace processing (raw → `traces/processed/`) is a separate `make traces` step: place the raw
+downloads under `traces/raw/<dataset>/` first (parsers in `traces/parsers/`; see [`../REPRODUCE.md`](../REPRODUCE.md)).
 
 ## What it models (SPEC pointers)
 
@@ -185,7 +186,7 @@ policies/policy.py            the shipped Never Go Dark policy (P1 + P2 + predic
 policies/continuity_policy.py retained stub (frozen two-file contract + isolation test)
 eval/metrics.py               frozen metric definitions (§8)
 eval/evaluate.py              split, scalar score, one-command CLI
-predictor/events.py           §6.3 event rule + UCC-switch validation (D-2 seed)
+predictor/events.py           §6.3 event rule + UCC-switch validation
 run_baselines.py              one command -> bar.{csv,md} + figures
 figures.py                    the three headline figures
 tests/test_sim.py             ZOH, gap→unusable, handshake, outage(+stall), isolation negatives, rate caps, GEO availability, split

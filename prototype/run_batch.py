@@ -4,7 +4,7 @@
 RESUMABLE: a run whose logs/result_<run>.json already exists is skipped, so an interrupted
 batch continues where it stopped (never restarts finished runs). Order is rep-major
 (rep 1 of every setup and mechanism, then rep 2, ...), so partial batches stay balanced.
-After every run, aggregate_repeats.py refreshes studio/data/proto/repeats.json.
+After every run, aggregate_repeats.py refreshes results/prototype-repeats.json.
 Progress: logs/batch.log. Stop file: touch logs/STOP_BATCH to stop after the current run.
 """
 import json

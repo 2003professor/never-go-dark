@@ -1,6 +1,6 @@
 """Never Go Dark on real WireGuard: runs the SHIPPED policy file unmodified.
 
-The exact file the simulator evaluates (katim-sim/policies/policy.py, mounted read-only
+The exact file the simulator evaluates (simulator/policies/policy.py, mounted read-only
 at /katim/policies) is loaded and called every 100 ms with an Obs built from what this
 gateway measures on the real tunnels (observable inputs only, as in SPEC §7):
   keepalive RTT EWMA / trend / loss / staleness / dead-peer flag  <- its own probes

@@ -34,7 +34,7 @@
 /* =====================================================================
    NGD CONTINUITY CONSOLE — styles
    "Night Instrument × EDGE grammar". Dark-first by brand design.
-   Token values mirror studio/brand/tokens.css (:root), with the light
+   Token values mirror the brand tokens (:root), with the light
    contract the artifact spec requires layered on top (dark is the brand
    default; light reuses the brand's print/paper palette).
    ===================================================================== */
@@ -1362,7 +1362,7 @@ kbd { font:600 11px/1 var(--font-mono); background:var(--surface-3); border:1px 
    mechanism selector, and "Hear the collapse" (a SYNTHESISED voice-band tone
    gated to silence on the measured 20 ms frame mask — no audio file).
 
-   Every on-screen number is from studio/data/proto/proto.json or computed
+   Every on-screen number is from the bundled prototype data or computed
    from it (computation stated in the UI). Labels: REAL / MODEL (bearer B =
    GEO). No fabricated values. Amber = Never Go Dark only; dark = hatched
    blackout, never red. A faithful emulation of the documented 9001-R design.
@@ -2172,9 +2172,9 @@ kbd { font:600 11px/1 var(--font-mono); background:var(--surface-3); border:1px 
 
    Data payload: this tab carries its own held-out bundle (the core bundle is
    the single prototype run only); the console must work offline with no fetch,
-   so the bundle is inlined below. Built read-only by studio/data/heldout/
-   export_heldout.py -> final_heldout_s300-319.json / noise_floor.json; see
-   notes/fleet.md for the compaction (RLE bitstrings, rounded arrays).
+   so the bundle is inlined below. Built read-only from the frozen results
+   (final_heldout_s300-319.json / noise_floor.json), then compacted
+   (RLE bitstrings, rounded arrays).
    ===================================================================== */
 (function () {
   "use strict";
@@ -3312,7 +3312,7 @@ kbd { font:600 11px/1 var(--font-mono); background:var(--surface-3); border:1px 
    Real WireGuard runs of the unmodified shipped policy, repeated across
    three setups (Cork 5G + GEO model, Cork 5G + measured Starlink LEO, and a
    high-speed-rail capture with two carriers measured simultaneously). Reads
-   studio/data/proto/repeats.json (bundled by build_console.py as
+   results/prototype-repeats.json (bundled at build time as
    ctx.data.repeats). The batch is still running, so n is 0..few per cell —
    this tab renders for any n and NEVER shows a mean for n=0. Nothing is
    fabricated, smoothed or rounded away; the numbers are the file's own.
@@ -3390,7 +3390,7 @@ kbd { font:600 11px/1 var(--font-mono); background:var(--surface-3); border:1px 
       root.innerHTML = `<style>${CSS}</style>
         <div class="ctx-strip"><div class="caps dash">Prototype repeats</div>
           <div class="claim">Repeat WireGuard runs of the shipped policy</div></div>
-        <div class="pr-empty">No repeat data bundled (studio/data/proto/repeats.json absent at build time).
+        <div class="pr-empty">No repeat data bundled (results/prototype-repeats.json absent at build time).
           The statistical evidence is the 28 held-out instances in <b>FLEET</b>.</div>`;
       mount._cleanup = () => {};
       return;
@@ -3426,7 +3426,7 @@ kbd { font:600 11px/1 var(--font-mono); background:var(--surface-3); border:1px 
             cell can be empty (n&nbsp;=&nbsp;0) &mdash; no mean is drawn for it. GEO is a <b>MODEL</b>; Starlink is
             <b>REAL</b>, stitched to the Cork drive by time only; the rail setup is <b>REAL SIMULTANEOUS</b> (both
             carriers measured at the same seconds). A faithful emulation of the documented 9001-R design.</div>
-          <div class="footer-line">Source: <span class="num">studio/data/proto/repeats.json</span> (bundled at build time).
+          <div class="footer-line">Source: <span class="num">results/prototype-repeats.json</span> (bundled at build time).
             Statistical claim: <b>FLEET</b> &mdash; 28 held-out instances, seeds 300&ndash;319, scored once.</div>
         </div>
       </div>
@@ -3596,8 +3596,8 @@ kbd { font:600 11px/1 var(--font-mono); background:var(--surface-3); border:1px 
    from the frozen evaluator), and the replay-fidelity statement.
 
    Every figure is from a named file: final_heldout_s300-319.json,
-   studio/data/heldout/heldout.json (meta), noise_floor.json / NOISE.md,
-   FINDINGS.md, TRACES.md, katim-sim/SPEC.md, and the frozen evaluator
+   results/heldout.json (meta), noise_floor.json / NOISE.md,
+   FINDINGS.md, TRACES.md, simulator/SPEC.md, and the frozen evaluator
    (eval/evaluate.py, eval/metrics.py), each cited where it is used.
    ===================================================================== */
 (function () {
@@ -3840,7 +3840,7 @@ kbd { font:600 11px/1 var(--font-mono); background:var(--surface-3); border:1px 
           <div class="pv-note" style="margin-top:12px">
             <b>REAL</b> single real replay &middot; <b>STITCHED</b> two real legs, measured independently and only time-aligned (Starlink seconds concatenated) &middot;
             <b>MODEL</b> standby is the GEO model &middot; <b>SIMULTANEOUS</b> one real two-subflow capture, no stitching.
-            Source <span class="num">studio/data/heldout/heldout.json &rsaquo; meta.scenario_construction</span>.
+            Source <span class="num">results/heldout.json &rsaquo; meta.scenario_construction</span>.
           </div>
         </section>
 
@@ -3915,7 +3915,7 @@ cost(m) = <span class="w">1.0</span>&middot;<span class="term">staleness&nbsp;p9
             <thead><tr><th>Mechanism</th><th style="text-align:right">staleness&nbsp;p95 (s)</th><th style="text-align:right">outage/tr (s)</th><th style="text-align:right">airtime (s)</th><th style="text-align:right">video</th><th style="text-align:right">score</th></tr></thead>
             <tbody>${scoreRows}</tbody>
           </table></div>
-          <div class="pv-note" style="margin-top:10px">Source <span class="num">katim-sim/results/final_heldout_s300-319.json &rsaquo; overall.*</span>. Oracle is the perfect-foresight ceiling, never a competitor.</div>
+          <div class="pv-note" style="margin-top:10px">Source <span class="num">results/final_heldout_s300-319.json &rsaquo; overall.*</span>. Oracle is the perfect-foresight ceiling, never a competitor.</div>
         </section>
 
         <section class="panel" data-brackets>
@@ -3929,7 +3929,7 @@ cost(m) = <span class="w">1.0</span>&middot;<span class="term">staleness&nbsp;p9
           <div class="panel-head"><div class="ttl"><div class="caps dash">Replay fidelity</div></div>
             <div class="meta">${ctx.badgeHTML("real","deterministic replay")}</div></div>
           <p class="pv-verbatim">Outage and gate rates reproduce the one-shot file exactly; airtime within one 100 ms tick.</p>
-          <p class="pv-note" style="line-height:1.6">A deterministic replay (<span class="num">studio/data/heldout/export_heldout.py</span>, frozen-file SHA-256 verified) reproduces outage, staleness and every gate rate <b>bit-exactly</b>. Standby / emission airtime matches to within one <span class="num">0.1 s</span> tick per run: the frozen run used a per-worker anti-gaming clock-offset salt that was random and unrecorded, which flips a standby teardown by one tick in a few runs. Outage is unaffected. This replay pins a fixed salt, so it is itself fully deterministic.</p>
+          <p class="pv-note" style="line-height:1.6">A deterministic replay (frozen-file SHA-256 verified) reproduces outage, staleness and every gate rate <b>bit-exactly</b>. Standby / emission airtime matches to within one <span class="num">0.1 s</span> tick per run: the frozen run used a per-worker anti-gaming clock-offset salt that was random and unrecorded, which flips a standby teardown by one tick in a few runs. Outage is unaffected. This replay pins a fixed salt, so it is itself fully deterministic.</p>
           <dl class="pv-kv" style="margin-top:11px">
             <dt>max airtime residual</dt><dd>1.8e&minus;4 s (overall) &middot; tol 1e&minus;2</dd>
             <dt>max per-scenario airtime</dt><dd>1.3e&minus;3 s &middot; tol 5e&minus;2</dd>
@@ -3940,7 +3940,7 @@ cost(m) = <span class="w">1.0</span>&middot;<span class="term">staleness&nbsp;p9
 
       <div class="replay-footer">
         <div class="footer-line"><b>One chain.</b> Datasets &rarr; scenario construction &rarr; the frozen simulator (SHA-256 pinned) &rarr; the one-shot held-out test &rarr; the numbers in REPLAY, FLEET and TRADE-OFF. A faithful emulation of the documented 9001-R design, not a benchmark of the physical appliance.</div>
-        <div class="footer-line">Road data &copy; OpenStreetMap contributors (ODbL). Sources: <span class="num">FINDINGS.md</span>, <span class="num">TRACES.md</span>, <span class="num">katim-sim/SPEC.md</span>, <span class="num">final_heldout_s300-319.json</span>, <span class="num">studio/data/heldout/heldout.json</span>, <span class="num">noise_floor.json</span>.</div>
+        <div class="footer-line">Road data &copy; OpenStreetMap contributors (ODbL). Sources: <span class="num">FINDINGS.md</span>, <span class="num">TRACES.md</span>, <span class="num">simulator/SPEC.md</span>, <span class="num">final_heldout_s300-319.json</span>, <span class="num">results/heldout.json</span>, <span class="num">noise_floor.json</span>.</div>
       </div>
       </div>`;
 
@@ -3961,7 +3961,7 @@ cost(m) = <span class="w">1.0</span>&middot;<span class="term">staleness&nbsp;p9
    "< 1 s per transition without an always-on standby", with Never Go Dark
    the only deployable mechanism inside it.
 
-   Numbers: katim-sim/results/final_heldout_s300-319.json > overall.* (the
+   Numbers: results/final_heldout_s300-319.json > overall.* (the
    SCRIPT.md §6 register). Nothing is read from the single-run proto bundle;
    held-out statistics are cited by value, as the contract requires.
    Labels: REAL + MODEL (the aggregate blends both; GEO = model). Amber is
@@ -4149,7 +4149,7 @@ cost(m) = <span class="w">1.0</span>&middot;<span class="term">staleness&nbsp;p9
           (<span class="num">outage_per_transition_s</span>). The aggregate blends REAL and MODEL
           scenarios (GEO is a model); the per-scenario split and every data source are in
           <b>PROVENANCE</b>. A faithful emulation of the documented 9001-R design.</div>
-        <div class="footer-line">Source: <span class="num">katim-sim/results/final_heldout_s300-319.json &rsaquo; overall.*</span>.
+        <div class="footer-line">Source: <span class="num">results/final_heldout_s300-319.json &rsaquo; overall.*</span>.
           Composite score defined in <b>PROVENANCE</b> (SPEC §8.7).</div>
       </div>
       </div>`;

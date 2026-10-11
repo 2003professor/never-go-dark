@@ -6,7 +6,7 @@ One-command reproduction:
         --seeds heldout --out results/figures/
 
 The evaluator is change-controlled (SPEC §10.1): only the policy files change
-after the D-4 freeze. It never reports held-out numbers unless explicitly run
+after the freeze. It never reports held-out numbers unless explicitly run
 with --split heldout, and the loop only ever sees the train split.
 """
 from __future__ import annotations

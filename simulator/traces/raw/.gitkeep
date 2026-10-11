@@ -1,0 +1,3 @@
+# Place downloaded raw datasets here, one folder per dataset.
+# See ../README.md for the layout and ../../../SOURCES.md for the sources.
+# Not bundled (third-party licences). `make traces` parses raw/ -> processed/.

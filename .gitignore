@@ -7,3 +7,9 @@ __pycache__/
 *.pre-v2
 node_modules/
 .ipynb_checkpoints/
+
+# downloaded / generated trace data (see REPRODUCE.md) — never commit the datasets
+simulator/traces/raw/*
+!simulator/traces/raw/.gitkeep
+simulator/traces/processed/
+simulator/traces/cards/

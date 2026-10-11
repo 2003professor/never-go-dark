@@ -3,7 +3,7 @@
 
 Why: the prototype must see exactly the links the simulator sees. Instead of re-implementing
 trace semantics (zero-order hold, horizons, Starlink RTT attachment, concatenation of measured
-seconds), we sample katim-sim's bearer objects once per second and write a CSV that
+seconds), we sample the simulator's bearer objects once per second and write a CSV that
 scripts/linkdrive.py replays with tc (underlay delay/loss + gateway capacity).
 
 Writes prototype/timelines/<setup>_<a|b>.csv and prototype/setups.json:
@@ -19,7 +19,7 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SIM = os.path.join(HERE, "..", "katim-sim")
+SIM = os.path.join(HERE, "..", "simulator")
 sys.path.insert(0, SIM)
 from sim.bearers import discover_traces, build_leo_concatenated, TraceReplayBearer, trace_is_heldout  # noqa: E402
 from sim.scenarios import degradation_events, _hsr_groups, _hash_int, _starlink_long_enough  # noqa: E402

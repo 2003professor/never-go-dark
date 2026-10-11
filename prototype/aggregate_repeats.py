@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Aggregate repeated prototype runs into studio/data/proto/repeats.json (read by the console).
+"""Aggregate repeated prototype runs into results/prototype-repeats.json (read by the console).
 
 Runs are named  <mode>_<setup>_r<k>  (e.g. ngd_corkgeo_r3) and scored by analyze.py into
 logs/result_<run>.json. Setups:
@@ -20,7 +20,7 @@ import statistics as st
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 LOGS = os.path.join(HERE, "logs")
-OUT = os.path.join(HERE, "..", "studio", "data", "proto", "repeats.json")
+OUT = os.path.join(HERE, "..", "results", "prototype-repeats.json")
 MODES = ["reactive", "mobike", "atsss", "ngd"]
 MECH_LABEL = {
     "reactive": "Documented 9001-R design (emulated, reactive)",
@@ -86,7 +86,7 @@ doc = {
     "_about": __doc__.strip().splitlines()[0],
     "generated_utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     "voice_gap_definition": ">= 10 consecutive lost 20 ms voice frames (>= 200 ms) = one voice-dark gap",
-    "policy_file": "katim-sim/policies/policy.py (unmodified, read-only)",
+    "policy_file": "simulator/policies/policy.py (unmodified, read-only)",
     "setups": setups,
 }
 os.makedirs(os.path.dirname(OUT), exist_ok=True)

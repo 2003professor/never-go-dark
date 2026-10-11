@@ -61,7 +61,7 @@ Full numbers: [`results/FINDINGS.md`](results/FINDINGS.md) (the findings) and [`
 > deck carry the headline numbers directly. (The prototype's rail / corkleo setups use the committed `timelines/` and need no
 > external trace.)
 
-**Dependencies** (Python 3.9+): `pip install -r requirements.txt` — numpy and pandas for the simulator; scikit-learn and matplotlib for predictor training and figures.
+**Dependencies** (Python 3.9+): `pip install -r requirements.txt` — numpy and pandas for the simulator; scikit-learn and matplotlib for predictor training and figures. Full raw→numbers reproduction (datasets, `make traces`, the held-out test) is in [`REPRODUCE.md`](REPRODUCE.md).
 
 **Simulator:**
 ```bash

@@ -31,7 +31,7 @@ ap.add_argument("--ul-ratio", type=float, default=0.53)
 ap.add_argument("--base-owd-ms", type=float, default=37.5)
 ap.add_argument("--hold-s", type=float, default=2.0)
 ap.add_argument("--queue-s", type=float, default=1.0, help="gateway class buffer depth (s at current rate) [I]")
-# Optional per-second timelines exported by export_timelines.py from katim-sim's own bearer
+# Optional per-second timelines exported by export_timelines.py from the simulator's own bearer
 # models. Without them the original behaviour is unchanged (A = UCC replay, B = GEO model).
 ap.add_argument("--timeline-a", default=None, help="replay bearer A from this timeline CSV instead of --trace")
 ap.add_argument("--timeline-b", default=None, help="replay bearer B from this timeline CSV instead of the GEO model")
