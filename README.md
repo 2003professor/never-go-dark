@@ -56,6 +56,11 @@ Full numbers: the headline table above, the frozen result files in [`results/`](
 
 ## How to run
 
+> The measured datasets are **not bundled** (third-party licences — see [`SOURCES.md`](SOURCES.md)); obtain them first to
+> re-run the simulator or the Cork+GEO prototype. The frozen result files in `results/` are the outputs, and the console and
+> deck carry the headline numbers directly. (The prototype's rail / corkleo setups use the committed `timelines/` and need no
+> external trace.)
+
 **Simulator** (Python 3, numpy):
 ```bash
 cd simulator && make        # or: python3 -m eval.evaluate

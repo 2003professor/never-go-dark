@@ -1,8 +1,8 @@
 # SPEC.md — Frozen Simulator Specification (P1 + P2)
 
-**KATIM Gateway 9001-R seamless-continuity simulator.** This is the contract the team implements on D-3. Once the team signs off at the end of D-4, the engine, the gateway model, the traffic model, the scenarios, the metrics and `eval.py` are **frozen**. Only the policy files change after that.
+**KATIM Gateway 9001-R seamless-continuity simulator.** This is the frozen contract: the engine, the gateway model, the traffic model, the scenarios, the metrics and `eval.py` are **frozen**. Only the policy files change after the freeze.
 
-Status: DRAFT for sign-off. Author: Simulator Architect. Companion evidence: `../ARCHITECTURE-MAP.md` (AM), `../CONTEXT.md`, `../TRACES.md`, `../PLAN.md`, and the extracted PDF texts in `../docs/*.txt`.
+Status: DRAFT for sign-off. Author: Simulator Architect. Companion evidence: the docs in `reference/` (AM = `ARCHITECTURE-MAP.md`) and EDGE's public KATIM documents (see `../SOURCES.md`).
 
 ---
 
@@ -14,7 +14,7 @@ Every modelling choice carries a tag:
 - **[D-ext]** documented-external — a public third-party measurement/standard says it. Cited by name.
 - **[I]** inferred/assumed — we reason it. Every [I] states the reasoning **and** names the sensitivity sweep that brackets it. **No [I] number is load-bearing on its own; a sweep must show the result survives the plausible range.**
 
-### 0.2 Citation keys (local files in `../docs/`)
+### 0.2 Citation keys (EDGE's public KATIM documents — see `../SOURCES.md`)
 | Key | File |
 |---|---|
 | WP | `20230508-katim-gateway-network-security-12-pg-12052023_eng.txt` (9011 Security white paper — the protocol handbook) |
@@ -25,11 +25,11 @@ Every modelling choice carries a tag:
 
 Line numbers are from the `.txt` extractions as of 2026-10-07. The 9001-R is the target; where the 9001-R datasheet is silent the WP (a 9011 document) supplies the protocol detail, and we say so, because the family shares "KATIM Gateway OS … functional parity … in mixed KATIM Gateway product deployments" (R:45–46).
 
-### 0.3 Dependency rule (per the team's D-4 decision)
-**Nothing in this spec may block on a human reply.** Every parameter resolves from one of three sources only: (a) a public document already in `../docs/`, (b) an open trace already downloaded under `traces/raw/`, or (c) an **[I]** assumption with a sweep. Anything historically marked "ask the authors" is resolved by **exclusion or parameterisation**, never by waiting:
+### 0.3 Dependency rule
+**Nothing in this spec may block on a human reply.** Every parameter resolves from one of three sources only: (a) a public KATIM document (see `../SOURCES.md`), (b) an open trace already downloaded under `traces/raw/`, or (c) an **[I]** assumption with a sweep. Anything historically marked "ask the authors" is resolved by **exclusion or parameterisation**, never by waiting:
 - **Satellite-vs-Cellular (Hu et al.)** — reuse terms unclear → **excluded as data**; cited for its published findings only (TRACES.md §1 row 5). The simultaneous satellite+cellular overlap is instead **stitched** from two open single-bearer traces (§3.6).
-- **Jev / TypeSafe on-prem** — on-prem deployment is unconfirmed → Jev is **out of the critical path and out of the frozen evaluator**. Message semantics the policy needs (`supersedes`, `urgency`, `value_half_life`) are produced by a **deterministic rule over documented message schemas** (§5.6), computable offline today. Jev stays a "Could" ablation that, if never confirmed, costs the submission nothing.
-- **IEEE DataPort / CRAWDAD logins** (Lumos5G, Berlin V2X) are **self-service sign-ins**, not replies; they are the teammate's D-4 action and the pipeline degrades gracefully without them (§3, cut rule).
+- **Message semantics** — the fields the policy needs (`supersedes`, `urgency`, `value_half_life`) are produced by a **deterministic rule over documented message schemas** (§5.6), computable offline today, with no external dependency.
+- **IEEE DataPort / CRAWDAD logins** (Lumos5G, Berlin V2X) are **self-service sign-ins**; the pipeline degrades gracefully without them (§3, cut rule).
 
 ### 0.4 Golden rule on data
 Real measured data only. In processed files we **never interpolate, resample, smooth or fill**. Missing stays empty. Resampling to the tick is the simulator's job and is done transparently at run time (§2), not baked into the data. Every dropped row is counted with a reason in the per-dataset **data card** (§3.7).
@@ -250,7 +250,7 @@ Assumed present (Nokia 5G-in-a-box / tactical satcom modem; AM:104). It performs
 - Background elastic transfer (map tiles, logs); greedy to fill spare capacity; lowest priority plane. No deadline. Used to create realistic contention for the shrunken link.
 
 ### 5.6 Message semantics without any external model (self-contained)
-The policy needs, per red-side message, `data_type`, `urgency`, `supersedes_previous`, `value_half_life`. These are produced by a **deterministic rule table keyed on `data_type`** (PLI→supersedes=true, short half-life; alert→urgency=high, supersedes=false; voice→realtime; video→elastic; bulk→background). This rule is computable **today, offline**, from the documented message schema, with **no dependency on Jev/TypeSafe or any reply** (§0.3). Jev remains an optional "Could" ablation that would *relabel a realistic public-safety corpus* for richer semantics; if it never materialises, the deterministic rule stands and the submission is unaffected.
+The policy needs, per red-side message, `data_type`, `urgency`, `supersedes_previous`, `value_half_life`. These are produced by a **deterministic rule table keyed on `data_type`** (PLI→supersedes=true, short half-life; alert→urgency=high, supersedes=false; voice→realtime; video→elastic; bulk→background). This rule is computable **today, offline**, from the documented message schema, with **no external dependency** (§0.3). Richer semantics for unstructured messages are future work; the deterministic rule stands on its own.
 
 ---
 

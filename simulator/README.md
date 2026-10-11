@@ -8,10 +8,17 @@ faithful emulation of KATIM's **documented** design and the standard existing
 mechanisms (IKEv2 MOBIKE, 3GPP ATSSS, always-warm) plus a perfect-foresight
 oracle.
 
-The contract is **`SPEC.md`** (frozen). This repository implements it. Only
-`policies/policy.py` (P1) and `policies/continuity_policy.py` (P2) change after
-the D-4 freeze; everything else — engine, gateway, traffic, scenarios, metrics,
-baselines — is frozen and change-controlled (SPEC §10).
+The contract is **`SPEC.md`** (frozen). This repository implements it. Only the
+policy files change after the freeze; everything else — engine, gateway, traffic,
+scenarios, metrics, baselines — is frozen and change-controlled (SPEC §10). The
+shipped policy is **`policies/policy.py`** (the full Never Go Dark policy: P1
+freshness + P2 predictor); `policies/continuity_policy.py` is a retained stub,
+kept only for the frozen two-file contract and the isolation test.
+
+> **The measured datasets are not bundled** (third-party licences — see
+> [`../SOURCES.md`](../SOURCES.md)). The commands below assume the processed CSVs
+> have been obtained and placed under `traces/processed/`; the frozen result JSONs
+> already in `results/` are the outputs of those runs.
 
 ## One-command reproduction
 
@@ -33,8 +40,8 @@ python tests/test_sim.py           #  (or: python -m pytest tests/ -q)
 python -m predictor.events
 ```
 
-`make reproduce`, `make test` and `make traces` wrap these. **No network and
-no human input** are needed at run time; trace parsing is a separate step.
+`make reproduce`, `make test` and `make traces` wrap these. No network is needed
+at run time; trace parsing (obtaining + parsing the datasets) is a separate step.
 
 ## What it models (SPEC pointers)
 
@@ -49,11 +56,11 @@ no human input** are needed at run time; trace parsing is a separate step.
 | Baselines: documented, MOBIKE, ATSSS, always-warm, oracle | `policies/*.py` | §9, §11 |
 | Frozen metrics (AoI, alert gate, voice gate, outage, emissions, goodput) + scalar score + by-trace split | `eval/metrics.py`, `eval/evaluate.py` | §8, §6.4 |
 
-### Bearers (all real, auto-discovered)
-The trace loader (`discover_traces`) auto-discovers **every** processed dataset
+### Bearers (all real)
+The trace loader (`discover_traces`) picks up **every** processed dataset placed
 under `traces/processed/` — UCC 5G, UCC 4G LTE, Starlink-on-the-Road (LEO),
-Meireles V2I Wi-Fi, HSR-MPTCP — and will pick up `lumos5g` / `berlin_v2x`
-automatically if they appear, but never requires them. GEO is a
+Meireles V2I Wi-Fi, HSR-MPTCP (obtain these per `../SOURCES.md`) — and will pick
+up `lumos5g` / `berlin_v2x` automatically if they appear, but never requires them. GEO is a
 measurement-parameterised **model** (labelled as such everywhere), never a
 replay.
 
@@ -171,8 +178,8 @@ sim/engine.py                 100 ms tick loop, committed-bearer tracking, deliv
 sim/isolation.py              SPEC §7.4 enforcement: load-time gate + oracle-only instance binding
 policies/interface.py         Obs/Action dataclasses (observable inputs only)
 policies/static_documented.py MOBIKE / ATSSS / always_warm / oracle baselines
-policies/policy.py            EDITABLE — P1 (stub = documented today)
-policies/continuity_policy.py EDITABLE — P2 (stub = documented today)
+policies/policy.py            the shipped Never Go Dark policy (P1 + P2 + predictor)
+policies/continuity_policy.py retained stub (frozen two-file contract + isolation test)
 eval/metrics.py               frozen metric definitions (§8)
 eval/evaluate.py              split, scalar score, one-command CLI
 predictor/events.py           §6.3 event rule + UCC-switch validation (D-2 seed)

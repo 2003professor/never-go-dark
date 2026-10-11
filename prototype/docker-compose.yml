@@ -6,8 +6,12 @@ x-node: &node
   cap_add: [NET_ADMIN]
   volumes:
     - ./:/app
-    - ../katim-sim/traces/processed:/traces:ro
-    - ../katim-sim/policies:/katim/policies:ro
+    # the shipped policy comes from the sibling simulator/ dir, run unmodified
+    - ../simulator/policies:/katim/policies:ro
+    # the Cork+GEO setup replays the UCC 5G trace: place the processed CSVs here.
+    # Datasets are NOT bundled (see SOURCES.md). The rail / corkleo setups use the
+    # committed timelines in ./timelines/ and need no external trace.
+    - ../simulator/traces/processed:/traces:ro
 
 services:
   hq:

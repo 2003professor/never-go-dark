@@ -22,7 +22,7 @@ Companion files: `ARCHITECTURE-MAP.md` (the evidence: every KATIM claim tagged [
 3. **Product:** the **KATIM Gateway 9001-R**, a rugged network encryptor built for "in-motion deployments". Proposing an improvement to *their own product* is more compelling to EDGE than a generic tool.
 4. **Rule:** we work only from **public documentation**. No probing of devices, no firmware. Every claim about their internals is tagged documented or inferred.
 5. **Method:** an autoresearch-style optimisation loop (Karpathy, March 2026): an LLM agent edits a policy file, a frozen evaluator scores it, and the change is kept or rolled back. This is the same family as DeepMind's AlphaEvolve, which found a 48-multiplication 4×4 complex matmul.
-6. **Framing borrowed from System 1 / System 2** (Kahneman; recently TypeSafe AI's "Jev"):
+6. **Framing borrowed from System 1 / System 2** (Kahneman):
    - **System 2 (offline, slow):** the autoresearch loop *discovers* a policy.
    - **System 1 (deployed, fast):** a small, auditable policy runs on the gateway.
    - Selling point: a certified defence encryptor can ship and certify **readable code**, not a black-box neural network.
@@ -110,14 +110,11 @@ Location AoI (mean and p95), alert deadline-hit rate and latency, voice delay an
 ### Deployment story
 The policy ships as a configuration feature of KATIM's management software (Network Management Suite / Crypto Network Manager). The certified crypto boundary is untouched.
 
-### Suggestion (optional): Jev as an offline teacher for message semantics
-TypeSafe AI's Jev (Sept 2026) is a "System One" model: it takes text or JSON plus typed questions and returns calibrated, typed answers in 70–500 ms. Deployment is a cloud console in early access; on-prem is not stated. Inputs are text and structured state only.
-- **Not in the live path:** sending plaintext to a third-party cloud would defeat the encryptor.
-- **Offline teacher:** Jev labels a realistic responder-message corpus with typed questions, e.g. `urgency`, `supersedes_previous`, `value_half_life`, `data_type`. Its calibrated probabilities flag low-confidence labels for human review.
-- **Distil:** a tiny on-device classifier trained on those labels feeds P1's policy in microseconds, auditable and with no cloud.
-- **Why it matters:** static traffic mapping cannot handle unstructured messages ("gas leak near tank B"). This makes the System 1 / System 2 framing literal: a frontier fast-judgment model teaches, a certifiable small model deploys.
-- **Caveats:** use real public-safety message formats and incident logs, not invented text; spot-check labels by hand; claim a direct mode only if TypeSafe confirms on-prem deployment.
-- Not suited to P2 or P3 (their inputs are numeric telemetry, where a small classical model is better), nor inside the frozen evaluator (its answers can vary, which invites gaming).
+### Message semantics
+The policy needs, per red-side message, `data_type`, `urgency`, `supersedes_previous`, `value_half_life`. These are produced by a
+**deterministic rule table keyed on `data_type`**, computable offline today from the documented message schema, with no external
+dependency. Richer semantics for unstructured messages (free text such as "gas leak near tank B") are future work; the deterministic rule
+stands on its own.
 
 ### Risks and open questions
 - What "automatic mapping" and "application identification" actually classify on (unpublished).

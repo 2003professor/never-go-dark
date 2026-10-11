@@ -47,13 +47,7 @@ Status key:
 3. **Handover events are extracted by a published rule**, not hand-labelled, so anyone can reproduce them from the raw traces.
 4. **Wi-Fi roaming is composed** from two real traces: timing from one, throughput from the other.
 
-## 4. Actions
-
-- [ ] **Create a free IEEE DataPort account** (you, not me) for Lumos5G, Berlin V2X and CRAWDAD.
-- [ ] Open the UCC 5G zip and confirm column names (not yet inspected).
-- [ ] Pick one LENS month: the smallest snapshot, about 18 GB.
-
-## 5. Supporting sets (kept with caveats, not core)
+## 4. Supporting sets (kept with caveats, not core)
 
 | Dataset | Why not core |
 |---|---|

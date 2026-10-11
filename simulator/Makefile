@@ -11,9 +11,10 @@ reproduce:
 test:
 	$(PY) tests/test_sim.py
 
-# (re)build processed traces from raw with the dataset parsers. The processed
-# CSVs are already committed; this is only needed if raw/ changes. Trace
-# parsing is deliberately SEPARATE from evaluation (evaluation needs no network).
+# (re)build processed traces from raw with the dataset parsers. The measured
+# datasets are NOT bundled in this repo (third-party licences — see SOURCES.md);
+# obtain them first, then run this to parse raw/ into traces/processed/. Trace
+# parsing is deliberately SEPARATE from evaluation.
 traces:
 	@for p in traces/parsers/parse_*.py; do echo "== $$p =="; $(PY) $$p || true; done
 

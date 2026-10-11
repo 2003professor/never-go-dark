@@ -1,8 +1,8 @@
 {
- "_about": "Aggregate repeated prototype runs into studio/data/proto/repeats.json (read by the console).",
+ "_about": "Aggregated repeated prototype runs (read by the console's PROTOTYPE tab).",
  "generated_utc": "2026-10-09T17:53:38Z",
  "voice_gap_definition": ">= 10 consecutive lost 20 ms voice frames (>= 200 ms) = one voice-dark gap",
- "policy_file": "katim-sim/policies/policy.py (unmodified, read-only)",
+ "policy_file": "simulator/policies/policy.py (unmodified, read-only)",
  "setups": [
   {
    "id": "corkgeo",

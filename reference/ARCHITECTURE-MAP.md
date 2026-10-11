@@ -3,7 +3,7 @@
 Target: **KATIM Gateway 9001-R** (rugged, "in-motion deployments"), with the family (9001, 9011, X9000R) as context.
 Every claim is tagged **[D]** documented (with source) or **[I]** inferred (with reasoning). Judges from EDGE will know where we guessed — keep the tags honest.
 
-## Sources (local copies in `docs/`)
+## Sources (EDGE's public KATIM documents — see [`../SOURCES.md`](../SOURCES.md))
 
 | Key | Document | URL |
 |---|---|---|
