@@ -29,7 +29,7 @@ FIGS = os.path.join(RESULTS, "figures")
 ORDER = ["static_documented", "mobike_roaming", "atsss_active_standby",
          "always_warm", "oracle"]
 PRETTY = {
-    "static_documented": "Documented KATIM (reactive)",
+    "static_documented": "Documented reactive (emulated 9001-R)",
     "mobike_roaming": "MOBIKE-style (RFC 4555)",
     "atsss_active_standby": "ATSSS-style (TS 23.501)",
     "always_warm": "Always-warm",

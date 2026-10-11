@@ -8,7 +8,8 @@ in [`reference/TRACES.md`](reference/TRACES.md).
 
 | Dataset | Reference | Source | Licence |
 |---|---|---|---|
-| UCC/MISL 5G (and 4G LTE) | Raca et al., *Beyond Throughput: The Next Generation*, ACM MMSys 2020 | github.com/uccmisl/5Gdataset | GPL-3.0 |
+| UCC/MISL 5G | Raca et al., *Beyond Throughput: The Next Generation*, ACM MMSys 2020 | github.com/uccmisl/5Gdataset | GPL-3.0 |
+| UCC/MISL 4G LTE | Raca et al., *Beyond Throughput: a 4G LTE dataset…*, ACM MMSys 2018 | zenodo.org/record/1219679 | CC BY 4.0 |
 | Starlink on the Road | Laniewski et al., TMA 2024 (arXiv:2403.13497) | github.com/sys-uos/Starlink-on-the-Road | CC BY-SA 4.0 |
 | Lumos5G (mmWave) | Narayanan et al., ACM IMC 2020 | ieee-dataport.org/node/3598 | CC BY 4.0 |
 | HSR-MPTCP | Li et al., ACM SIGCOMM 2018 | github.com/superlitong/hsr-mptcp | MIT |

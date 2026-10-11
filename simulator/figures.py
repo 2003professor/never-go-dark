@@ -36,7 +36,7 @@ def _caption(fig, text, y=0.005, size=7):
              wrap=True, color="#333333")
 
 MECHS = [
-    ("static_documented", "Documented KATIM (reactive)", "#c23b22"),
+    ("static_documented", "Documented reactive (emulated 9001-R)", "#c23b22"),
     ("mobike_roaming", "MOBIKE-style (RFC 4555)", "#e08214"),
     ("atsss_active_standby", "ATSSS-style (TS 23.501)", "#1f78b4"),
     ("always_warm", "Always-warm", "#6a51a3"),

@@ -1,6 +1,6 @@
 """static_documented.py — the bar (SPEC §9.1, frozen).
 
-Faithful emulation of documented KATIM behaviour: fixed plane->traffic table,
+Faithful emulation of documented 9001-R behaviour: fixed plane->traffic table,
 internal discard priority within the gateway, NO bearer reaction, NO
 superseded-drop, reactive recovery only (10 s retry, 60 s re-handshake,
 131072-pkt ratchet, keepalive DPD). This is the bar that "beats a faithful

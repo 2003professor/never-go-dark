@@ -485,7 +485,7 @@ The official brief requires a **comparative analysis against EXISTING mechanisms
 ### 11.3 Comparison matrix (frozen; drives PDF pages 6–7)
 | Mechanism | Standby | Trigger | Freshness logic | Expected strength | Expected weakness |
 |---|---|---|---|---|---|
-| Documented KATIM (§9.1) | none | reactive DPD + 10 s retry + full re-handshake | none | simple | long dark gaps |
+| Documented reactive (§9.1) | none | reactive DPD + 10 s retry + full re-handshake | none | simple | long dark gaps |
 | MOBIKE-style (§11.1) | none | reactive DPD + ~1 RTT migration | none | short gaps once detected | still dark during detection; stale queues |
 | ATSSS-style (§11.2) | always up | reactive threshold | none | near-zero outage | max emissions/overhead; stale queues |
 | Always-warm (§9.2) | always up | reactive | none | — | same cost as ATSSS |

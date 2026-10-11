@@ -11,7 +11,7 @@ only): video, bulk. This split keeps the AoI / alert / voice headline metrics
 exact while avoiding millions of tiny objects for elastic traffic.
 
 Message semantics (data_type -> urgency, supersedes, half-life) come from the
-deterministic rule table in §5.6 — computable offline today, no Jev / reply.
+deterministic rule table in §5.6 — computable offline today, no external dependency.
 """
 from __future__ import annotations
 

@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 LOGS = Path(__file__).parent / "logs"
-NAMES = {"reactive": "Documented KATIM (reactive)", "mobike": "MOBIKE-style roaming (RFC 4555)",
+NAMES = {"reactive": "Documented reactive (emulated 9001-R)", "mobike": "MOBIKE-style roaming (RFC 4555)",
          "atsss": "ATSSS-style active-standby (TS 23.501)", "p2": "Ours v0: hand-written trigger",
          "ngd": "Never Go Dark: shipped policy file, unmodified"}
 

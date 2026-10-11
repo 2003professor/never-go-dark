@@ -2,7 +2,7 @@
 
 Results charts use the ONE-SHOT held-out results (results/final_heldout_s300-319.json);
 nothing is re-run on held-out data. The timeline is an illustrative TRAINING-split
-example, labelled as such. Colours follow the team deck: blue = KATIM today /
+example, labelled as such. Colours follow the team deck: blue = documented design /
 existing mechanisms, orange = Never Go Dark, green = oracle ceiling.
 usage: python3 report_figures.py
 """
@@ -24,7 +24,7 @@ os.makedirs(OUT, exist_ok=True)
 INK, PAPER, MUTED = "#14202B", "#F3F1EA", "#5A6570"
 COL = {"documented": "#2F6FA8", "mobike": "#6FA0C8", "atsss": "#8A949C", "always_warm": "#B9C6CF",
        "never_go_dark": "#E08A2E", "never_go_dark_modem": "#F0C08A", "oracle": "#2E7D32"}
-NAME = {"documented": "Documented KATIM", "mobike": "MOBIKE-style (RFC 4555)", "atsss": "ATSSS-style (TS 23.501)",
+NAME = {"documented": "Documented reactive", "mobike": "MOBIKE-style (RFC 4555)", "atsss": "ATSSS-style (TS 23.501)",
         "always_warm": "Always-warm", "never_go_dark": "Never Go Dark (ours)",
         "never_go_dark_modem": "Ours + modem hint", "oracle": "Oracle (perfect foresight)"}
 SC_SHORT = {"S1_lte5g_walk": "5G walk\n(single link)", "S2_5g_leo_drive": "5G→LEO\ndrive",
@@ -144,7 +144,7 @@ def fig_planes():
     v1 = json.load(open(os.path.join(HERE, "results", "planes_experiment_v1_thrashing.json")))
     planes = ["8", "2", "1"]
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(12, 4.6))
-    series = [("documented", v2, "Documented KATIM", COL["documented"]),
+    series = [("documented", v2, "Documented reactive", COL["documented"]),
               ("ours_P2_only", v2, "Never Go Dark (P2)", COL["never_go_dark"]),
               ("ours_P1+P2", v1, "+ naive freshness dropping (thrashing)", "#C0392B")]
     x = np.arange(len(planes))

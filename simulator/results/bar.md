@@ -12,7 +12,7 @@ PASS: on all **640** train runs the oracle's outage is <= the outage of every sa
 
 | Mechanism | AoI p95 (s) | Outage/tr (s) | dark (s) | stall (s) | Emission-tx (s) | Standby-tx (s) | Satcom ovh (B) | Alert-hit (feas/abs) | Voice<=400ms (feas/abs) | Video gp | Gates feas | Gates abs | Score |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Documented KATIM (reactive) | 5.9 ± 11.1 | 5.15 | 5.13 | 0.02 | 8.7 | 0.0 | 892 | 0.916/0.912 | 0.899/0.892 | 0.745 | FAIL | FAIL | -2.043 |
+| Documented reactive (emulated 9001-R) | 5.9 ± 11.1 | 5.15 | 5.13 | 0.02 | 8.7 | 0.0 | 892 | 0.916/0.912 | 0.899/0.892 | 0.745 | FAIL | FAIL | -2.043 |
 | MOBIKE-style (RFC 4555) | 4.0 ± 10.2 | 3.75 | 3.74 | 0.01 | 35.1 | 0.0 | 5367 | 0.960/0.956 | 0.945/0.937 | 0.768 | FAIL | FAIL | -0.504 |
 | ATSSS-style (TS 23.501) | 1.7 ± 3.1 | 0.68 | 0.65 | 0.04 | 102.0 | 97.6 | 12091 | 0.990/0.986 | 0.977/0.970 | 0.709 | FAIL | FAIL | 0.652 |
 | Always-warm | 1.7 ± 3.1 | 0.69 | 0.65 | 0.04 | 102.0 | 97.6 | 12014 | 0.990/0.986 | 0.978/0.970 | 0.739 | FAIL | FAIL | 0.671 |
@@ -40,7 +40,7 @@ Minimum achievable outage per EMISSION-transmit budget (fraction of episode leng
 
 | Mechanism | S1_lte5g_walk | S2_5g_leo_drive | S3_5g_geo_drive | S4_wifi_edge | S5_mptcp_hsr | S6_collective_5g_geo | S7_lumos_walk | S8_lumos_drive |
 |---|---|---|---|---|---|---|---|---|
-| Documented KATIM (reactive) | 2.47 | 3.51 | 4.12 | 2.85 | 23.17 | 4.07 | 0.64 | 0.36 |
+| Documented reactive (emulated 9001-R) | 2.47 | 3.51 | 4.12 | 2.85 | 23.17 | 4.07 | 0.64 | 0.36 |
 | MOBIKE-style (RFC 4555) | 2.01 | 0.87 | 0.88 | 1.28 | 23.17 | 0.86 | 0.60 | 0.36 |
 | ATSSS-style (TS 23.501) | 2.47 | 0.32 | 0.12 | 0.95 | 0.18 | 0.29 | 0.92 | 0.22 |
 | Always-warm | 2.47 | 0.33 | 0.12 | 0.95 | 0.18 | 0.29 | 0.93 | 0.22 |
@@ -52,7 +52,7 @@ Minimum achievable outage per EMISSION-transmit budget (fraction of episode leng
 
 | Mechanism | S1_lte5g_walk | S2_5g_leo_drive | S3_5g_geo_drive | S4_wifi_edge | S5_mptcp_hsr | S6_collective_5g_geo | S7_lumos_walk | S8_lumos_drive |
 |---|---|---|---|---|---|---|---|---|
-| Documented KATIM (reactive) | 0.01 | 0.01 | 0.01 | 0.07 | 0.01 | 0.01 | 0.00 | 0.00 |
+| Documented reactive (emulated 9001-R) | 0.01 | 0.01 | 0.01 | 0.07 | 0.01 | 0.01 | 0.00 | 0.00 |
 | MOBIKE-style (RFC 4555) | 0.01 | 0.01 | 0.01 | 0.07 | 0.01 | 0.01 | 0.00 | 0.00 |
 | ATSSS-style (TS 23.501) | 0.01 | 0.02 | 0.03 | 0.09 | 0.08 | 0.02 | 0.03 | 0.02 |
 | Always-warm | 0.01 | 0.02 | 0.03 | 0.09 | 0.08 | 0.02 | 0.04 | 0.02 |
@@ -64,7 +64,7 @@ Minimum achievable outage per EMISSION-transmit budget (fraction of episode leng
 
 | Mechanism | S1_lte5g_walk | S2_5g_leo_drive | S3_5g_geo_drive | S4_wifi_edge | S5_mptcp_hsr | S6_collective_5g_geo | S7_lumos_walk | S8_lumos_drive |
 |---|---|---|---|---|---|---|---|---|
-| Documented KATIM (reactive) | 4.7 | 5.5 | 5.8 | 2.7 | 21.4 | 5.4 | 1.0 | 1.0 |
+| Documented reactive (emulated 9001-R) | 4.7 | 5.5 | 5.8 | 2.7 | 21.4 | 5.4 | 1.0 | 1.0 |
 | MOBIKE-style (RFC 4555) | 3.4 | 1.2 | 1.3 | 1.2 | 21.4 | 1.4 | 1.0 | 1.0 |
 | ATSSS-style (TS 23.501) | 4.7 | 1.1 | 1.2 | 1.4 | 1.0 | 1.6 | 1.5 | 1.0 |
 | Always-warm | 4.7 | 1.1 | 1.2 | 1.4 | 1.0 | 1.6 | 1.5 | 1.0 |
@@ -76,7 +76,7 @@ Minimum achievable outage per EMISSION-transmit budget (fraction of episode leng
 
 | Mechanism | S1_lte5g_walk | S2_5g_leo_drive | S3_5g_geo_drive | S4_wifi_edge | S5_mptcp_hsr | S6_collective_5g_geo | S7_lumos_walk | S8_lumos_drive |
 |---|---|---|---|---|---|---|---|---|
-| Documented KATIM (reactive) | 0.951 | 0.890 | 0.917 | 0.971 | 0.720 | 0.877 | 1.000 | 1.000 |
+| Documented reactive (emulated 9001-R) | 0.951 | 0.890 | 0.917 | 0.971 | 0.720 | 0.877 | 1.000 | 1.000 |
 | MOBIKE-style (RFC 4555) | 0.978 | 0.996 | 0.998 | 0.994 | 0.720 | 0.995 | 1.000 | 1.000 |
 | ATSSS-style (TS 23.501) | 0.951 | 0.992 | 1.000 | 0.992 | 1.000 | 0.998 | 0.992 | 0.992 |
 | Always-warm | 0.951 | 0.992 | 1.000 | 0.992 | 1.000 | 0.998 | 0.996 | 0.992 |
@@ -88,7 +88,7 @@ Minimum achievable outage per EMISSION-transmit budget (fraction of episode leng
 
 | Mechanism | S1_lte5g_walk | S2_5g_leo_drive | S3_5g_geo_drive | S4_wifi_edge | S5_mptcp_hsr | S6_collective_5g_geo | S7_lumos_walk | S8_lumos_drive |
 |---|---|---|---|---|---|---|---|---|
-| Documented KATIM (reactive) | 0.921 | 0.890 | 0.917 | 0.971 | 0.720 | 0.877 | 1.000 | 1.000 |
+| Documented reactive (emulated 9001-R) | 0.921 | 0.890 | 0.917 | 0.971 | 0.720 | 0.877 | 1.000 | 1.000 |
 | MOBIKE-style (RFC 4555) | 0.946 | 0.996 | 0.998 | 0.994 | 0.720 | 0.995 | 1.000 | 1.000 |
 | ATSSS-style (TS 23.501) | 0.921 | 0.992 | 1.000 | 0.992 | 1.000 | 0.998 | 0.992 | 0.992 |
 | Always-warm | 0.921 | 0.992 | 1.000 | 0.992 | 1.000 | 0.998 | 0.996 | 0.992 |
@@ -100,7 +100,7 @@ Minimum achievable outage per EMISSION-transmit budget (fraction of episode leng
 
 | Mechanism | S1_lte5g_walk | S2_5g_leo_drive | S3_5g_geo_drive | S4_wifi_edge | S5_mptcp_hsr | S6_collective_5g_geo | S7_lumos_walk | S8_lumos_drive |
 |---|---|---|---|---|---|---|---|---|
-| Documented KATIM (reactive) | 0.947 | 0.871 | 0.851 | 0.944 | 0.745 | 0.851 | 0.990 | 0.993 |
+| Documented reactive (emulated 9001-R) | 0.947 | 0.871 | 0.851 | 0.944 | 0.745 | 0.851 | 0.990 | 0.993 |
 | MOBIKE-style (RFC 4555) | 0.966 | 0.973 | 0.962 | 0.974 | 0.745 | 0.952 | 0.991 | 0.993 |
 | ATSSS-style (TS 23.501) | 0.947 | 0.988 | 0.976 | 0.979 | 0.998 | 0.967 | 0.968 | 0.994 |
 | Always-warm | 0.947 | 0.988 | 0.976 | 0.979 | 0.998 | 0.967 | 0.972 | 0.994 |
@@ -112,7 +112,7 @@ Minimum achievable outage per EMISSION-transmit budget (fraction of episode leng
 
 | Mechanism | S1_lte5g_walk | S2_5g_leo_drive | S3_5g_geo_drive | S4_wifi_edge | S5_mptcp_hsr | S6_collective_5g_geo | S7_lumos_walk | S8_lumos_drive |
 |---|---|---|---|---|---|---|---|---|
-| Documented KATIM (reactive) | 0.30 | 0.04 | 0.07 | 0.23 | 0.24 | 0.01 | 0.51 | 0.72 |
+| Documented reactive (emulated 9001-R) | 0.30 | 0.04 | 0.07 | 0.23 | 0.24 | 0.01 | 0.51 | 0.72 |
 | MOBIKE-style (RFC 4555) | 0.41 | 0.31 | 0.09 | 0.36 | 0.24 | 0.01 | 0.51 | 0.72 |
 | ATSSS-style (TS 23.501) | 0.30 | 0.79 | 0.06 | 0.62 | 0.88 | 0.03 | 0.66 | 0.88 |
 | Always-warm | 0.30 | 0.79 | 0.06 | 0.62 | 0.88 | 0.03 | 0.72 | 0.88 |

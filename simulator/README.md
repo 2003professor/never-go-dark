@@ -100,7 +100,7 @@ is never free; standby-tx is reported alongside.
 
 | Mechanism | AoI p95 (s) | Outage / transition (s) | of which stall (s) | Standby-tx (s) | Satcom ovh (B) | Alert-hit |
 |---|---|---|---|---|---|---|
-| Documented KATIM (reactive) | 16.9 | 25.35 | 5.39 | 0.0 | 7983 | 0.739 |
+| Documented reactive (emulated 9001-R) | 16.9 | 25.35 | 5.39 | 0.0 | 7983 | 0.739 |
 | MOBIKE-style (RFC 4555) | 14.4 | 19.88 | 5.48 | 0.0 | 5609 | 0.772 |
 | ATSSS-style (TS 23.501) | 11.5 | 16.31 | 2.46 | 34.5 | 10565 | 0.846 |
 | Always-warm | 11.5 | 16.30 | 2.44 | 34.5 | 10565 | 0.846 |

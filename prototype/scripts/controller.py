@@ -4,7 +4,7 @@ Observable inputs only (what a real gateway sees): its own keepalive probes on t
 tunnels it runs (reply or miss, and RTT). No trace values, no event schedule.
 
 Modes
-  reactive  documented KATIM: keepalive 1 s, dead after 3 misses, retry anchored 10 s
+  reactive  documented reactive: keepalive 1 s, dead after 3 misses, retry anchored 10 s
             after the break, then a full handshake on bearer B (WireGuard handshake +
             extra round trips carrying KB-scale key material = classical+PQ stand-in).
   mobike    IKEv2 MOBIKE / WireGuard roaming: same session, endpoint moved to bearer B
