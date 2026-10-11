@@ -39,6 +39,8 @@ NOMINAL_WARM_TH = 0.55                   # DISPLAY reference only; the shipped p
 GAP_S = 0.20                             # >=10 consecutive lost 20 ms voice frames = voice-dark
                                          # (matches analyze.py's dark-gap definition)
 IDLE_AFTER_S = 3.0                       # ctl file silent this long => run ended
+B_PROVENANCE = os.environ.get("B_PROVENANCE", "model")   # bearer-B label the console shows:
+                                         # model (GEO, default) | real | real_simultaneous
 
 
 def _f(x, d=None):
@@ -265,6 +267,7 @@ class Monitor:
                 "warm_state": self._warm,
                 "hs_last_s": self._hs_last,
                 "link": link or {},
+                "b_provenance": B_PROVENANCE,
                 "goodput_mbps": {k2: round(v, 2) for k2, v in self._gp.items()},
                 "voice": {
                     "recv_pps": len(self._voice_recv_times),
