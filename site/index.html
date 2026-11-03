@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Never Go Dark — interactive console</title>
+<title>Never Go Dark — live exhibit & console</title>
 <style>
   :root{
     --ground:#0A0D12; --surface:#10151D; --hairline:#27313F; --hairline-2:#35414F;
@@ -28,6 +28,9 @@
     background:var(--signal);color:#0A0D12;font:700 18px/1 var(--sans);text-decoration:none;border-radius:4px}
   .cta:hover{background:#FFB869}
   .cta .arw{font-size:20px}
+  .ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:4px}
+  .cta.alt{background:transparent;color:var(--text);border:1px solid var(--hairline-2)}
+  .cta.alt:hover{background:var(--surface);border-color:var(--signal);color:var(--text)}
   .meta{margin-top:20px;font:400 14px/1.6 var(--mono);color:var(--faint)}
   .meta a{color:var(--dim)} .meta a:hover{color:var(--signal)}
   .foot{margin-top:34px;padding-top:16px;border-top:1px solid var(--hairline);
@@ -37,17 +40,20 @@
 </head>
 <body>
   <div class="wrap">
-    <div class="kicker">ATP2026 · EDGE track · interactive console</div>
+    <div class="kicker">ATP2026 · EDGE track · live exhibit</div>
     <h1>Never&nbsp;Go&nbsp;Dark</h1>
     <p class="sub">Predictive make-before-break for encrypted tunnels. Watch one real 5G collapse — and watch the backup tunnel hold the link before it breaks.</p>
 
     <div class="note">
       <div class="ic">▲</div>
-      <div><b>Best viewed on a computer, not a phone.</b><br>
-        <span>The console is an instrument-dense operations view (map, telemetry, charts) designed for a desktop or laptop screen. On a phone it will work but it will be cramped.</span></div>
+      <div><b>Two ways in.</b><br>
+        <span>The <b>exhibit</b> is the track-day interactive — seven scenes from real frozen data; it fills a landscape screen and also reflows to a phone. The <b>console</b> is the instrument-dense operations view (map, telemetry, charts), best on a laptop or desktop.</span></div>
     </div>
 
-    <a class="cta" href="console.html">Open the interactive console <span class="arw">→</span></a>
+    <div class="ctas">
+      <a class="cta" href="exhibit.html">Open the live exhibit <span class="arw">→</span></a>
+      <a class="cta alt" href="console.html">Open the full console <span class="arw">→</span></a>
+    </div>
 
     <div class="meta">
       Proposal deck: <a href="Never-Go-Dark-Proposal-Deck.pdf">Never-Go-Dark-Proposal-Deck.pdf</a><br>
