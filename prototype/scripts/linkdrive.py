@@ -54,18 +54,24 @@ def tl_at(tl, k):
 GEO = {"owd_ms": 300.0, "vehicle_mbit": 3.0, "hq_mbit": 18.0, "loss_pct": 0.1}
 VOICE_PORT, VIDEO_PORT, BULK_PORT, ECHO_PORT = 5000, 5001, 5002, 9000
 
-by_sec = {}
-with open(a.trace) as f:
-    for r in csv.DictReader(f):
-        t = float(r["t_s"])
-        prev = by_sec.get(t)
-        r["_ping"] = bool(r["rtt_ms"]) or bool(prev and prev.get("_ping"))
-        by_sec[t] = r                     # duplicated same-second rows: last real value
-for r in by_sec.values():
-    if r["_ping"]:
-        r["dl_mbps"] = r["ul_mbps"] = ""  # ping-second throughput artefact: absent
-rows = sorted(by_sec.items())
-ts = [t for t, _ in rows]
+# Bearer A's measured --trace is only needed when A is NOT driven by an exported
+# timeline. A timeline-driven setup (e.g. rail) is self-contained in ./timelines/ and
+# must not require the (often unbundled) trace CSV to be present on the demo machine.
+if a.timeline_a:
+    rows, ts = [], []
+else:
+    by_sec = {}
+    with open(a.trace) as f:
+        for r in csv.DictReader(f):
+            t = float(r["t_s"])
+            prev = by_sec.get(t)
+            r["_ping"] = bool(r["rtt_ms"]) or bool(prev and prev.get("_ping"))
+            by_sec[t] = r                     # duplicated same-second rows: last real value
+    for r in by_sec.values():
+        if r["_ping"]:
+            r["dl_mbps"] = r["ul_mbps"] = ""  # ping-second throughput artefact: absent
+    rows = sorted(by_sec.items())
+    ts = [t for t, _ in rows]
 dev_a, dev_b = underlay_dev("10.10.1."), underlay_dev("10.10.2.")
 
 
